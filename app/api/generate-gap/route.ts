@@ -47,11 +47,27 @@ Provide a detailed gap analysis in JSON format:
     
     let gap
     try {
+      // Try parsing directly first
       gap = JSON.parse(analysisText)
     } catch {
-      gap = {
-        raw: analysisText,
-        summary: analysisText
+      // Try extracting JSON from markdown code blocks
+      const jsonMatch = analysisText.match(/```(?:json)?\s*(\{[\s\S]*?\})\s*```/)
+      if (jsonMatch) {
+        try {
+          gap = JSON.parse(jsonMatch[1])
+        } catch {
+          gap = {
+            raw: analysisText,
+            summary: analysisText,
+            priorities: []
+          }
+        }
+      } else {
+        gap = {
+          raw: analysisText,
+          summary: analysisText,
+          priorities: []
+        }
       }
     }
 

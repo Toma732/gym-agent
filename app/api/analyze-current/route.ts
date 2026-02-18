@@ -64,9 +64,22 @@ Format response as JSON:
     try {
       analysis = JSON.parse(analysisText)
     } catch {
-      analysis = {
-        raw: analysisText,
-        summary: analysisText.slice(0, 300)
+      // Try extracting JSON from markdown code blocks
+      const jsonMatch = analysisText.match(/```(?:json)?\s*(\{[\s\S]*?\})\s*```/)
+      if (jsonMatch) {
+        try {
+          analysis = JSON.parse(jsonMatch[1])
+        } catch {
+          analysis = {
+            raw: analysisText,
+            summary: analysisText.slice(0, 300)
+          }
+        }
+      } else {
+        analysis = {
+          raw: analysisText,
+          summary: analysisText.slice(0, 300)
+        }
       }
     }
 

@@ -107,29 +107,43 @@ export default function GapAnalysis() {
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 mb-8">
               <h2 className="text-3xl font-bold text-white mb-6">What You Need to Develop</h2>
               
-              <div className="grid md:grid-cols-2 gap-6">
-                {gapAnalysis.priorities?.map((priority: any, index: number) => (
-                  <div key={index} className="bg-purple-500/20 rounded-lg p-4">
-                    <h3 className="text-xl font-semibold text-white mb-2">
-                      {priority.area}
-                    </h3>
-                    <p className="text-gray-300 text-sm mb-2">{priority.description}</p>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs text-purple-300 font-medium">Priority:</span>
-                      <div className="flex-1 bg-white/10 rounded-full h-2">
-                        <div 
-                          className="bg-purple-500 h-2 rounded-full"
-                          style={{ width: `${priority.priorityLevel}%` }}
-                        />
+              {gapAnalysis.priorities && gapAnalysis.priorities.length > 0 ? (
+                <>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {gapAnalysis.priorities.map((priority: any, index: number) => (
+                      <div key={index} className="bg-purple-500/20 rounded-lg p-4">
+                        <h3 className="text-xl font-semibold text-white mb-2">
+                          {priority.area}
+                        </h3>
+                        <p className="text-gray-300 text-sm mb-2">{priority.description}</p>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs text-purple-300 font-medium">Priority:</span>
+                          <div className="flex-1 bg-white/10 rounded-full h-2">
+                            <div 
+                              className="bg-purple-500 h-2 rounded-full"
+                              style={{ width: `${priority.priorityLevel}%` }}
+                            />
+                          </div>
+                        </div>
                       </div>
-                    </div>
+                    ))}
                   </div>
-                ))}
-              </div>
 
-              {gapAnalysis.summary && (
-                <div className="mt-6 bg-purple-500/10 rounded-lg p-4 border-l-4 border-purple-500">
-                  <p className="text-white">{gapAnalysis.summary}</p>
+                  {gapAnalysis.summary && (
+                    <div className="mt-6 bg-purple-500/10 rounded-lg p-4 border-l-4 border-purple-500">
+                      <p className="text-white">{gapAnalysis.summary}</p>
+                    </div>
+                  )}
+                </>
+              ) : gapAnalysis.raw ? (
+                <div className="bg-purple-500/20 rounded-lg p-6">
+                  <p className="text-gray-300 whitespace-pre-wrap leading-relaxed">
+                    {gapAnalysis.raw}
+                  </p>
+                </div>
+              ) : (
+                <div className="text-gray-300">
+                  <p>{JSON.stringify(gapAnalysis, null, 2)}</p>
                 </div>
               )}
             </div>

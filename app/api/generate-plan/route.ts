@@ -55,9 +55,24 @@ Respond in JSON format:
     try {
       plan = JSON.parse(planText)
     } catch {
-      plan = {
-        raw: planText,
-        notes: planText
+      // Try extracting JSON from markdown code blocks
+      const jsonMatch = planText.match(/```(?:json)?\s*(\{[\s\S]*?\})\s*```/)
+      if (jsonMatch) {
+        try {
+          plan = JSON.parse(jsonMatch[1])
+        } catch {
+          plan = {
+            raw: planText,
+            notes: planText,
+            weeklyPlan: []
+          }
+        }
+      } else {
+        plan = {
+          raw: planText,
+          notes: planText,
+          weeklyPlan: []
+        }
       }
     }
 

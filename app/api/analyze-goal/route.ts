@@ -67,10 +67,22 @@ Format your response as JSON with these keys:
     try {
       analysis = JSON.parse(analysisText)
     } catch {
-      // If not valid JSON, structure the text response
-      analysis = {
-        raw: analysisText,
-        summary: analysisText.slice(0, 300) + '...'
+      // Try extracting JSON from markdown code blocks
+      const jsonMatch = analysisText.match(/```(?:json)?\s*(\{[\s\S]*?\})\s*```/)
+      if (jsonMatch) {
+        try {
+          analysis = JSON.parse(jsonMatch[1])
+        } catch {
+          analysis = {
+            raw: analysisText,
+            summary: analysisText.slice(0, 300) + '...'
+          }
+        }
+      } else {
+        analysis = {
+          raw: analysisText,
+          summary: analysisText.slice(0, 300) + '...'
+        }
       }
     }
 
