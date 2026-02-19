@@ -71,14 +71,14 @@ export default function OnboardingFocus() {
   const allApproved = focusAreas.every((area) => area.approved);
 
   return (
-    <div className="min-h-screen bg-white pb-2xl">
+    <div className="min-h-screen bg-primary-black pb-2xl">
       <TopNav showAuth={false} />
 
       <main className="pt-nav-top pb-24 min-h-screen">
         <div className="max-w-mobile mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Header */}
         <section className="mt-lg mb-xl">
-          <h1 className="font-display text-h1 text-primary-black mb-md">
+          <h1 className="font-display text-h1 text-white mb-md">
             Your Focus Areas
           </h1>
           <p className="font-body text-body text-gray-700 mb-lg">
@@ -88,10 +88,10 @@ export default function OnboardingFocus() {
 
           {/* Analysis Summary */}
           <Card className="bg-primary-yellow bg-opacity-20 border-primary-yellow">
-            <h3 className="font-display text-h3 text-primary-black mb-sm">
+            <h3 className="font-display text-h3 text-white mb-sm">
               AI Analysis Summary
             </h3>
-            <p className="font-body text-body text-gray-900">
+            <p className="font-body text-body text-white">
               Your primary focus should be building upper body mass while
               developing core strength. We recommend a 4-day split targeting
               these areas progressively.
@@ -101,7 +101,7 @@ export default function OnboardingFocus() {
 
         {/* Focus Areas */}
         <section className="mb-xl">
-          <h2 className="font-display text-h2 text-primary-black mb-lg">
+          <h2 className="font-display text-h2 text-white mb-lg">
             Focus Areas ({focusAreas.filter((a) => a.approved).length} /{' '}
             {focusAreas.length} approved)
           </h2>

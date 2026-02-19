@@ -82,7 +82,7 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pb-nav-bottom">
+    <div className="min-h-screen bg-primary-black pb-nav-bottom">
       <TopNav
         userName={userData.name}
         onProfileClick={() => setProfileExpanded(!profileExpanded)}
@@ -111,7 +111,7 @@ export default function HomePage() {
 
               {/* Profile Info */}
               <div className="flex-1">
-                <h2 className="font-display text-h2 text-primary-black mb-xs">
+                <h2 className="font-display text-h2 text-white mb-xs">
                   {userData.name}
                 </h2>
                 <p className="font-body text-body-sm text-gray-700">
@@ -144,7 +144,7 @@ export default function HomePage() {
 
         {/* Weekly Schedule */}
         <section className="mb-xl">
-          <h2 className="font-display text-h2 text-primary-black mb-lg">
+          <h2 className="font-display text-h2 text-white mb-lg">
             Your Training Schedule
           </h2>
 

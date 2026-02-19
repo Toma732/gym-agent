@@ -11,10 +11,10 @@ export default function Home() {
   }, [router]);
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center">
+    <div className="min-h-screen bg-primary-black flex items-center justify-center">
       <div className="text-center">
-        <div className="font-display text-h1 text-primary-black mb-4">7.32</div>
-        <p className="font-body text-body text-gray-700">Loading...</p>
+        <div className="font-display text-[48px] md:text-[64px] text-primary-yellow mb-4">7.32</div>
+        <p className="font-body text-[20px] text-white">Loading...</p>
       </div>
     </div>
   );

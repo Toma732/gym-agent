@@ -44,8 +44,8 @@ html {
 }
 
 body {
-  background: var(--color-white);
-  color: var(--color-gray-900);
+  background: var(--color-primary-black);
+  color: var(--color-white);
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.5;
@@ -107,4 +107,76 @@ button:active, a[role="button"]:active {
   animation: skeleton-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   background-color: var(--color-gray-200);
   border-radius: 8px;
+}
+
+/* Responsive Container System - Research-backed best practices */
+.container-responsive {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  
+  /* Mobile (320-479px): 16px margins */
+  padding-left: 16px;
+  padding-right: 16px;
+  
+  /* Mobile landscape (480-700px): 24px margins */
+  @media (min-width: 480px) {
+    padding-left: 24px;
+    padding-right: 24px;
+    max-width: 700px;
+  }
+  
+  /* Tablet (768px): 32px margins, wider content */
+  @media (min-width: 768px) {
+    padding-left: 32px;
+    padding-right: 32px;
+    max-width: 768px;
+  }
+  
+  /* Desktop (992px): 48px margins, full layout */
+  @media (min-width: 992px) {
+    padding-left: 48px;
+    padding-right: 48px;
+    max-width: 992px;
+  }
+  
+  /* Large desktop (1200px+): 80-120px margins, max content width */
+  @media (min-width: 1200px) {
+    padding-left: 80px;
+    padding-right: 80px;
+    max-width: 1200px;
+  }
+}
+
+/* Responsive spacing utilities - scales from mobile to desktop */
+.section-spacing {
+  /* Mobile: 48px between sections */
+  margin-bottom: 48px;
+  
+  /* Desktop: 64px between sections */
+  @media (min-width: 992px) {
+    margin-bottom: 64px;
+  }
+}
+
+.content-spacing {
+  /* Mobile: 24px between content blocks */
+  margin-bottom: 24px;
+  
+  /* Desktop: 32px between content blocks */
+  @media (min-width: 992px) {
+    margin-bottom: 32px;
+  }
+}
+
+/* Proper top padding to account for fixed nav */
+.main-content {
+  /* Nav height (60px) + additional breathing room */
+  padding-top: calc(60px + 48px);
+  padding-bottom: 48px;
+  
+  @media (min-width: 992px) {
+    padding-top: calc(60px + 64px);
+    padding-bottom: 64px;
+  }
 }

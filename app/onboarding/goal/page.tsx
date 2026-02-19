@@ -30,14 +30,14 @@ export default function OnboardingGoal() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pb-2xl">
+    <div className="min-h-screen bg-primary-black pb-2xl">
       <TopNav showAuth={false} />
 
       <main className="pt-nav-top pb-24 min-h-screen">
         <div className="max-w-mobile mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Header */}
         <section className="mt-lg mb-xl">
-          <h1 className="font-display text-h1 text-primary-black mb-md">
+          <h1 className="font-display text-h1 text-white mb-md">
             Set Your Goal
           </h1>
           <p className="font-body text-body text-gray-700 mb-lg">
@@ -106,7 +106,7 @@ export default function OnboardingGoal() {
         {/* Your Goal (Uploaded Images) */}
         {uploadedGoals.length > 0 && (
           <section className="mb-xl">
-            <h2 className="font-display text-h2 text-primary-black mb-lg">
+            <h2 className="font-display text-h2 text-white mb-lg">
               Your Goal
             </h2>
             <div className="grid grid-cols-2 gap-md">
@@ -119,13 +119,13 @@ export default function OnboardingGoal() {
 
         {/* Popular Goals */}
         <section className="mb-xl">
-          <h2 className="font-display text-h2 text-primary-black mb-lg">
+          <h2 className="font-display text-h2 text-white mb-lg">
             Popular Goals
           </h2>
           <div className="space-y-lg">
             {popularGoals.map((goal, index) => (
               <div key={index}>
-                <h3 className="font-display text-h3 text-primary-black mb-md">
+                <h3 className="font-display text-h3 text-white mb-md">
                   {goal.name}
                 </h3>
                 <div className="grid grid-cols-2 gap-md">

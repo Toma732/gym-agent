@@ -33,14 +33,14 @@ export default function OnboardingBaseline() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pb-2xl">
+    <div className="min-h-screen bg-primary-black pb-2xl">
       <TopNav showAuth={false} />
 
       <main className="pt-nav-top pb-24 min-h-screen">
         <div className="max-w-mobile mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Header */}
         <section className="mt-lg mb-xl">
-          <h1 className="font-display text-h1 text-primary-black mb-md">
+          <h1 className="font-display text-h1 text-white mb-md">
             Set Your Baseline
           </h1>
           <p className="font-body text-body text-gray-700 mb-lg">
@@ -50,7 +50,7 @@ export default function OnboardingBaseline() {
 
           {/* Privacy Notice */}
           <div className="mb-lg p-md bg-secondary-blue bg-opacity-10 rounded-card border border-secondary-blue border-opacity-30">
-            <p className="font-body text-body-sm text-gray-900">
+            <p className="font-body text-body-sm text-white">
               <span className="font-medium">🔒 Your privacy matters:</span> All
               photos are encrypted and private. We never share your data.
             </p>
@@ -95,7 +95,7 @@ export default function OnboardingBaseline() {
         {/* Your Baseline (Uploaded Images) */}
         {uploadedBaseline.length > 0 && (
           <section className="mb-xl">
-            <h2 className="font-display text-h2 text-primary-black mb-lg">
+            <h2 className="font-display text-h2 text-white mb-lg">
               Your Baseline
             </h2>
             <div className="grid grid-cols-2 gap-md">
@@ -112,7 +112,7 @@ export default function OnboardingBaseline() {
 
         {/* Common Baselines */}
         <section className="mb-xl">
-          <h2 className="font-display text-h2 text-primary-black mb-lg">
+          <h2 className="font-display text-h2 text-white mb-lg">
             Common Starting Points
           </h2>
           <div className="grid grid-cols-2 gap-md">
@@ -128,7 +128,7 @@ export default function OnboardingBaseline() {
                     Example
                   </span>
                 </div>
-                <p className="font-body text-body-sm text-gray-900">{baseline}</p>
+                <p className="font-body text-body-sm text-white">{baseline}</p>
               </Card>
             ))}
           </div>

@@ -41,19 +41,19 @@ export default function AssessPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pb-nav-bottom">
+    <div className="min-h-screen bg-primary-black pb-nav-bottom">
       <TopNav userName="Alex" />
 
       <main className="pt-nav-top pb-nav-bottom min-h-screen">
         <div className="max-w-mobile mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Progress Overview */}
         <section className="mt-lg mb-xl">
-          <h1 className="font-display text-h1 text-primary-black mb-lg">
+          <h1 className="font-display text-h1 text-white mb-lg">
             Your Progress
           </h1>
 
           <Card className="mb-lg">
-            <h2 className="font-display text-h2 text-primary-black mb-lg">
+            <h2 className="font-display text-h2 text-white mb-lg">
               Current Progress
             </h2>
 
@@ -80,7 +80,7 @@ export default function AssessPage() {
             {/* Consistency */}
             <div className="flex items-center justify-between pt-lg border-t border-gray-200">
               <div>
-                <h3 className="font-display text-h3 text-primary-black mb-xs">
+                <h3 className="font-display text-h3 text-white mb-xs">
                   Consistency
                 </h3>
                 <p className="font-body text-body-sm text-gray-700">
@@ -97,10 +97,10 @@ export default function AssessPage() {
 
           {/* AI Assessment */}
           <Card className="bg-primary-yellow bg-opacity-20 border-primary-yellow">
-            <h3 className="font-display text-h3 text-primary-black mb-sm">
+            <h3 className="font-display text-h3 text-white mb-sm">
               AI Analysis
             </h3>
-            <p className="font-body text-body text-gray-900">
+            <p className="font-body text-body text-white">
               You&apos;re building momentum! Your chest and shoulders are responding
               well to the training stimulus. Focus on progressive overload in
               Week 2 to maintain growth.
@@ -110,7 +110,7 @@ export default function AssessPage() {
 
         {/* Your Goals */}
         <section className="mb-xl">
-          <h2 className="font-display text-h2 text-primary-black mb-lg">
+          <h2 className="font-display text-h2 text-white mb-lg">
             Your Goals
           </h2>
           <div className="grid grid-cols-2 gap-md">
@@ -131,7 +131,7 @@ export default function AssessPage() {
 
         {/* Your Baseline */}
         <section className="mb-xl">
-          <h2 className="font-display text-h2 text-primary-black mb-lg">
+          <h2 className="font-display text-h2 text-white mb-lg">
             Your Baseline
           </h2>
           <div className="grid grid-cols-2 gap-md">
@@ -153,7 +153,7 @@ export default function AssessPage() {
         {/* Your Tracking */}
         <section className="mb-xl">
           <div className="flex items-center justify-between mb-lg">
-            <h2 className="font-display text-h2 text-primary-black">
+            <h2 className="font-display text-h2 text-white">
               Your Tracking
             </h2>
             <Button variant="primary" size="small" onClick={() => {}}>
@@ -168,7 +168,7 @@ export default function AssessPage() {
 
           {weeklyTracking.map((weekData) => (
             <Card key={weekData.week} className="mb-lg">
-              <h3 className="font-display text-h3 text-primary-black mb-md">
+              <h3 className="font-display text-h3 text-white mb-md">
                 Week {weekData.week}
               </h3>
               <div className="grid grid-cols-3 gap-sm">

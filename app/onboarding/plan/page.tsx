@@ -81,28 +81,28 @@ export default function OnboardingPlan() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pb-2xl">
+    <div className="min-h-screen bg-primary-black pb-2xl">
       <TopNav showAuth={false} />
 
       <main className="pt-nav-top pb-24 min-h-screen">
         <div className="max-w-mobile mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Header */}
         <section className="mt-lg mb-xl">
-          <h1 className="font-display text-h1 text-primary-black mb-md">
+          <h1 className="font-display text-h1 text-white mb-md">
             Your Training Plan
           </h1>
           <p className="font-body text-body text-gray-700 mb-lg">
             Here&apos;s your personalized plan to reach your goal. The plan runs for{' '}
-            <span className="font-medium text-primary-black">6 weeks</span> and
+            <span className="font-medium text-white">6 weeks</span> and
             includes a reassessment to optimize your next phase.
           </p>
 
           {/* Motivation Card */}
           <Card className="bg-secondary-green bg-opacity-20 border-secondary-green">
-            <p className="font-display text-h3 text-primary-black mb-sm">
+            <p className="font-display text-h3 text-white mb-sm">
               You&apos;ve got this! 💪
             </p>
-            <p className="font-body text-body text-gray-900">
+            <p className="font-body text-body text-white">
               Stay consistent, track your progress, and trust the process. Your
               transformation starts today.
             </p>
@@ -111,7 +111,7 @@ export default function OnboardingPlan() {
 
         {/* Weeks Overview */}
         <section className="mb-xl">
-          <h2 className="font-display text-h2 text-primary-black mb-lg">
+          <h2 className="font-display text-h2 text-white mb-lg">
             Weekly Breakdown
           </h2>
 
@@ -144,7 +144,7 @@ export default function OnboardingPlan() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-display text-h3 text-primary-black mb-sm">
+                <h3 className="font-display text-h3 text-white mb-sm">
                   Week 7: Assessment & Optimization
                 </h3>
                 <p className="font-body text-body text-gray-700 mb-md">
