@@ -131,16 +131,24 @@ body {
 .body-lg {
   font-size: clamp(1.125rem, 2vw, 1.25rem);
   line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .body {
   font-size: clamp(1rem, 1.5vw, 1.125rem);
   line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .body-sm {
   font-size: clamp(0.875rem, 1.25vw, 1rem);
   line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Glassmorphism card effect */
@@ -202,36 +210,35 @@ button:hover:not(:disabled), a[role="button"]:hover {
   margin-left: auto;
   margin-right: auto;
   
-  /* Mobile (320-479px): 20px margins */
-  padding-left: 20px;
-  padding-right: 20px;
+  /* Mobile (320-479px): 24px margins, no max-width constraint */
+  padding-left: 24px;
+  padding-right: 24px;
   
-  /* Mobile landscape (480-700px): 24px margins */
+  /* Mobile landscape (480px+): 32px margins */
   @media (min-width: 480px) {
-    padding-left: 24px;
-    padding-right: 24px;
-    max-width: 700px;
-  }
-  
-  /* Tablet (768px): 32px margins, wider content */
-  @media (min-width: 768px) {
     padding-left: 32px;
     padding-right: 32px;
-    max-width: 768px;
   }
   
-  /* Desktop (992px): 48px margins, full layout */
-  @media (min-width: 992px) {
+  /* Tablet (768px+): 48px margins, start constraining width */
+  @media (min-width: 768px) {
     padding-left: 48px;
     padding-right: 48px;
-    max-width: 992px;
+    max-width: 1024px;
   }
   
-  /* Large desktop (1200px+): 80-120px margins, max content width */
-  @media (min-width: 1200px) {
+  /* Desktop (992px+): 64px margins, comfortable reading width */
+  @media (min-width: 992px) {
+    padding-left: 64px;
+    padding-right: 64px;
+    max-width: 1280px;
+  }
+  
+  /* Large desktop (1440px+): 80px margins, maximum content width */
+  @media (min-width: 1440px) {
     padding-left: 80px;
     padding-right: 80px;
-    max-width: 1200px;
+    max-width: 1440px;
   }
 }
 

@@ -58,13 +58,12 @@ export default function OnboardingFirstScreen() {
               </div>
 
               {/* Hero Headline */}
-              <div className="space-y-4">
-                <h1 className="heading-hero text-white max-w-4xl mx-auto">
-                  Enough guessing,
-                  <br />
+              <div className="space-y-4 px-4">
+                <h1 className="heading-hero text-white mx-auto" style={{ maxWidth: '900px' }}>
+                  Enough guessing,{' '}
                   <span className="text-primary-yellow">time for results</span>
                 </h1>
-                <p className="body-lg text-white/70 max-w-2xl mx-auto">
+                <p className="body-lg text-white/70 mx-auto" style={{ maxWidth: '700px' }}>
                   AI-backed physique improvements. No more trial and error.
                 </p>
               </div>
@@ -91,7 +90,7 @@ export default function OnboardingFirstScreen() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-children">
               {steps.map((step) => (
-                <Card key={step.number} variant="glass" hover>
+                <Card key={step.number} variant="glass" hover className="min-w-0">
                   <div className="space-y-4">
                     {/* Step Number */}
                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-yellow/20 border border-primary-yellow/30">
@@ -124,11 +123,11 @@ export default function OnboardingFirstScreen() {
 
           {/* Social Proof - Transformations */}
           <section className="section-spacing">
-            <div className="text-center content-spacing">
+            <div className="text-center content-spacing px-4">
               <h2 className="heading-2 text-white mb-3">
                 Join the crew
               </h2>
-              <p className="body text-white/60 max-w-2xl mx-auto">
+              <p className="body text-white/60 mx-auto" style={{ maxWidth: '600px' }}>
                 Real people, real results. See what's possible when AI meets dedication.
               </p>
             </div>
@@ -153,11 +152,11 @@ export default function OnboardingFirstScreen() {
           {/* Final CTA Section with Stats */}
           <section className="section-spacing">
             <Card variant="elevated" className="text-center space-y-8">
-              <div className="space-y-4">
+              <div className="space-y-4 px-4">
                 <h2 className="heading-2 text-white">
                   Ready to transform?
                 </h2>
-                <p className="body-lg text-white/70 max-w-2xl mx-auto">
+                <p className="body-lg text-white/70 mx-auto" style={{ maxWidth: '650px' }}>
                   Start your personalized fitness journey today. No credit card required.
                 </p>
               </div>
