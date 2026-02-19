@@ -107,10 +107,10 @@ export default function GapAnalysis() {
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 mb-8">
               <h2 className="text-3xl font-bold text-white mb-6">What You Need to Develop</h2>
               
-              {gapAnalysis.priorities && gapAnalysis.priorities.length > 0 ? (
+              {(gapAnalysis as {priorities?: unknown[]}).priorities && (gapAnalysis as {priorities: unknown[]}).priorities.length > 0 ? (
                 <>
                   <div className="grid md:grid-cols-2 gap-6">
-                    {gapAnalysis.priorities.map((priority: Record<string, unknown>, index: number) => (
+                    {((gapAnalysis as {priorities: unknown[]}).priorities as Record<string, unknown>[]).map((priority: Record<string, unknown>, index: number) => (
                       <div key={index} className="bg-purple-500/20 rounded-lg p-4">
                         <h3 className="text-xl font-semibold text-white mb-2">
                           {priority.area}
@@ -129,16 +129,16 @@ export default function GapAnalysis() {
                     ))}
                   </div>
 
-                  {gapAnalysis.summary && (
+                  {(gapAnalysis as {summary?: string}).summary && (
                     <div className="mt-6 bg-purple-500/10 rounded-lg p-4 border-l-4 border-purple-500">
-                      <p className="text-white">{gapAnalysis.summary}</p>
+                      <p className="text-white">{(gapAnalysis as {summary: string}).summary}</p>
                     </div>
                   )}
                 </>
-              ) : gapAnalysis.raw ? (
+              ) : (gapAnalysis as {raw?: string}).raw ? (
                 <div className="bg-purple-500/20 rounded-lg p-6">
                   <p className="text-gray-300 whitespace-pre-wrap leading-relaxed">
-                    {gapAnalysis.raw}
+                    {(gapAnalysis as {raw: string}).raw}
                   </p>
                 </div>
               ) : (
@@ -165,14 +165,14 @@ export default function GapAnalysis() {
                 <h2 className="text-3xl font-bold text-white mb-6">Your Personalized Workout Plan</h2>
                 
                 <div className="space-y-6">
-                  {workoutPlan.weeklyPlan?.map((day: Record<string, unknown>, index: number) => (
+                  {((workoutPlan as {weeklyPlan?: unknown[]})?.weeklyPlan as Record<string, unknown>[] | undefined)?.map((day: Record<string, unknown>, index: number) => (
                     <div key={index} className="bg-white/5 rounded-lg p-6">
                       <h3 className="text-2xl font-semibold text-purple-400 mb-4">
                         Day {index + 1}: {day.focus}
                       </h3>
                       
                       <div className="space-y-3">
-                        {day.exercises?.map((exercise: Record<string, unknown>, exIndex: number) => (
+                        {((day as {exercises?: unknown[]})?.exercises as Record<string, unknown>[] | undefined)?.map((exercise: Record<string, unknown>, exIndex: number) => (
                           <div key={exIndex} className="bg-white/5 rounded p-3">
                             <div className="flex justify-between items-start">
                               <div>
@@ -190,9 +190,9 @@ export default function GapAnalysis() {
                   ))}
                 </div>
 
-                {workoutPlan.notes && (
+                {(workoutPlan as {notes?: string}).notes && (
                   <div className="mt-6 bg-purple-500/20 rounded-lg p-4">
-                    <p className="text-gray-300 text-sm">{workoutPlan.notes}</p>
+                    <p className="text-gray-300 text-sm">{(workoutPlan as {notes: string}).notes}</p>
                   </div>
                 )}
               </div>

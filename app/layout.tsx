@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-// Load PuffSquare font (when OTF file is provided)
-// Placeholder: Will use system-ui until PuffSquare-Regular.otf is added to app/fonts/
+// Load PuffSquare font - COMMENTED OUT UNTIL FONT FILE PROVIDED
+// Uncomment when PuffSquare-Regular.otf is added to app/fonts/
+/*
 const puffSquare = localFont({
   src: [
     {
@@ -16,6 +17,7 @@ const puffSquare = localFont({
   fallback: ['system-ui', 'sans-serif'],
   display: 'swap',
 });
+*/
 
 export const metadata: Metadata = {
   title: "Coach - AI Fitness Transformation",
@@ -28,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={puffSquare.variable}>
+    <html lang="en">
       <body className="font-body antialiased bg-white text-gray-900">
         {children}
       </body>

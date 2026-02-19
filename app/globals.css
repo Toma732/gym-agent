@@ -51,7 +51,7 @@ body {
   line-height: 1.5;
 }
 
-/* PuffSquare font face (placeholder - will work when OTF is added) */
+/* PuffSquare font face - COMMENTED OUT UNTIL FONT FILE PROVIDED
 @font-face {
   font-family: 'PuffSquare';
   src: url('./fonts/PuffSquare-Regular.otf') format('opentype');
@@ -59,6 +59,7 @@ body {
   font-style: normal;
   font-display: swap;
 }
+*/
 
 /* Utility classes */
 .font-display {
