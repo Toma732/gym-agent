@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={puffSquare.variable}>
-      <body className="font-body antialiased bg-white text-gray-900">
+      <body className="font-body antialiased bg-primary-black text-white">
         {children}
       </body>
     </html>
