@@ -88,7 +88,8 @@ export default function HomePage() {
         onProfileClick={() => setProfileExpanded(!profileExpanded)}
       />
 
-      <main className="pt-nav-top px-md max-w-screen-sm mx-auto">
+      <main className="pt-nav-top pb-nav-bottom min-h-screen">
+        <div className="max-w-mobile mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Profile Card */}
         <section className="mt-lg mb-xl">
           <Card className="relative">
@@ -191,6 +192,7 @@ export default function HomePage() {
             </div>
           </Card>
         </section>
+        </div>
       </main>
 
       <BottomNav />

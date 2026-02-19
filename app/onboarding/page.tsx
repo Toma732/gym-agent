@@ -19,7 +19,8 @@ export default function OnboardingFirstScreen() {
       <TopNav showAuth={true} />
 
       {/* Main Content */}
-      <main className="pt-nav-top pb-lg px-md max-w-screen-sm mx-auto">
+      <main className="pt-nav-top pb-16 min-h-screen">
+        <div className="max-w-mobile mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Hero Section */}
         <section className="mt-2xl mb-xl text-center">
           <h1 className="font-display text-h1 text-primary-black mb-md">
@@ -127,6 +128,7 @@ export default function OnboardingFirstScreen() {
             © 2026 7.32 Coach • Privacy • Terms
           </p>
         </footer>
+        </div>
       </main>
     </div>
   );

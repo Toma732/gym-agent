@@ -15,7 +15,7 @@ export const Card: React.FC<CardProps> = ({
   className = '',
   onClick,
 }) => {
-  const baseClasses = 'rounded-card p-md';
+  const baseClasses = 'rounded-card p-4 sm:p-6';
 
   const variantClasses = {
     default: 'bg-white border border-gray-200 shadow-card',

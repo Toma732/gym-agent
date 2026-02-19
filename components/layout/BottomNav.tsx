@@ -26,7 +26,7 @@ export const BottomNav: React.FC = () => {
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 h-nav-bottom bg-white border-t border-gray-200 z-50">
-      <div className="max-w-screen-xl mx-auto h-full px-md flex items-center justify-around">
+      <div className="max-w-mobile mx-auto h-full px-4 flex items-center justify-around">
         {NAV_ITEMS.map((item) => {
           const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
           

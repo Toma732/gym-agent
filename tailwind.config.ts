@@ -7,7 +7,17 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+    },
     extend: {
+      maxWidth: {
+        'mobile': '430px',
+        'container': '1200px',
+      },
       colors: {
         // Primary
         primary: {
@@ -34,12 +44,12 @@ const config: Config = {
         body: ['Calibri', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'h1': ['32px', { lineHeight: '1.2' }],
-        'h2': ['24px', { lineHeight: '1.25' }],
-        'h3': ['20px', { lineHeight: '1.2' }],
-        'body': ['16px', { lineHeight: '1.5' }],
-        'body-sm': ['14px', { lineHeight: '1.5' }],
-        'caption': ['12px', { lineHeight: '1.4' }],
+        'h1': ['clamp(28px, 5vw, 48px)', { lineHeight: '1.2' }],
+        'h2': ['clamp(22px, 4vw, 32px)', { lineHeight: '1.25' }],
+        'h3': ['clamp(18px, 3vw, 24px)', { lineHeight: '1.2' }],
+        'body': ['clamp(15px, 2vw, 18px)', { lineHeight: '1.5' }],
+        'body-sm': ['clamp(13px, 1.5vw, 16px)', { lineHeight: '1.5' }],
+        'caption': ['clamp(11px, 1.2vw, 14px)', { lineHeight: '1.4' }],
       },
       spacing: {
         'xs': '4px',

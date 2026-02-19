@@ -74,7 +74,8 @@ export default function OnboardingFocus() {
     <div className="min-h-screen bg-white pb-2xl">
       <TopNav showAuth={false} />
 
-      <main className="pt-nav-top px-md max-w-screen-sm mx-auto">
+      <main className="pt-nav-top pb-24 min-h-screen">
+        <div className="max-w-mobile mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Header */}
         <section className="mt-lg mb-xl">
           <h1 className="font-display text-h1 text-primary-black mb-md">
@@ -131,6 +132,7 @@ export default function OnboardingFocus() {
             </p>
           )}
         </section>
+        </div>
       </main>
     </div>
   );
