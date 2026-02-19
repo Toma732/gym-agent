@@ -2,8 +2,8 @@
 
 @theme inline {
   /* Design System Fonts */
-  --font-display: var(--font-puff-square), system-ui, sans-serif;
-  --font-body: Calibri, system-ui, sans-serif;
+  --font-display: var(--font-puff-square, system-ui), sans-serif;
+  --font-body: 'Calibri', system-ui, sans-serif;
   
   /* Primary Colors */
   --color-primary-yellow: #FFE358;

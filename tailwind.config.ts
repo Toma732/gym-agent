@@ -40,16 +40,16 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ['PuffSquare', 'system-ui', 'sans-serif'],
+        display: ['var(--font-puff-square)', 'system-ui', 'sans-serif'],
         body: ['Calibri', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'h1': ['clamp(28px, 5vw, 48px)', { lineHeight: '1.2' }],
-        'h2': ['clamp(22px, 4vw, 32px)', { lineHeight: '1.25' }],
-        'h3': ['clamp(18px, 3vw, 24px)', { lineHeight: '1.2' }],
-        'body': ['clamp(15px, 2vw, 18px)', { lineHeight: '1.5' }],
-        'body-sm': ['clamp(13px, 1.5vw, 16px)', { lineHeight: '1.5' }],
-        'caption': ['clamp(11px, 1.2vw, 14px)', { lineHeight: '1.4' }],
+        'h1': ['2rem', { lineHeight: '1.2' }],        // 32px
+        'h2': ['1.5rem', { lineHeight: '1.25' }],     // 24px
+        'h3': ['1.25rem', { lineHeight: '1.2' }],     // 20px
+        'body': ['1rem', { lineHeight: '1.5' }],      // 16px
+        'body-sm': ['0.875rem', { lineHeight: '1.5' }], // 14px
+        'caption': ['0.75rem', { lineHeight: '1.4' }],  // 12px
       },
       spacing: {
         'xs': '4px',
