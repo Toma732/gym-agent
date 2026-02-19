@@ -31,7 +31,7 @@ export const WeekComponent: React.FC<WeekComponentProps> = ({
 
   if (week.locked) {
     return (
-      <Card variant="subtle" className="mb-md opacity-60">
+      <Card variant="glass" className="mb-md opacity-60">
         <div className="flex items-center justify-between">
           <div>
             <h3 className="font-display text-h3 text-gray-700">
@@ -67,7 +67,7 @@ export const WeekComponent: React.FC<WeekComponentProps> = ({
     <div className="mb-lg">
       {/* Week Header */}
       <Card
-        variant={expanded ? 'outlined' : 'default'}
+        variant={expanded ? 'outlined' : 'glass'}
         hover={!expanded}
         onClick={!expanded ? toggleExpanded : undefined}
         className="mb-md"

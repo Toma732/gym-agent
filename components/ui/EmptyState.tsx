@@ -8,7 +8,7 @@ interface EmptyStateProps {
   description: string;
   actionLabel?: string;
   onAction?: () => void;
-  variant?: 'default' | 'subtle';
+  variant?: 'glass' | 'elevated' | 'outlined';
 }
 
 export const EmptyState: React.FC<EmptyStateProps> = ({
@@ -17,7 +17,7 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
   description,
   actionLabel,
   onAction,
-  variant = 'default',
+  variant = 'glass',
 }) => {
   const defaultIcon = (
     <svg
@@ -126,7 +126,7 @@ export const NoPhotosEmptyState: React.FC<{ onUpload: () => void }> = ({
 
 export const NoDataEmptyState: React.FC = () => (
   <EmptyState
-    variant="subtle"
+    variant="glass"
     title="No Data Yet"
     description="Keep training and checking back. Your progress will appear here as you complete workouts."
   />

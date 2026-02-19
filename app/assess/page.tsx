@@ -197,7 +197,7 @@ export default function AssessPage() {
           ))}
 
           {/* Empty State for Future Weeks */}
-          <Card variant="subtle" className="text-center py-xl">
+          <Card variant="glass" className="text-center py-xl">
             <p className="font-body text-body text-gray-400">
               More weeks will appear as you progress through your plan.
             </p>

@@ -24,7 +24,7 @@ export const FocusAreaComponent: React.FC<FocusAreaComponentProps> = ({
 }) => {
   return (
     <Card
-      variant={focusArea.approved ? 'outlined' : 'default'}
+      variant={focusArea.approved ? 'outlined' : 'glass'}
       className={`mb-md ${
         focusArea.approved ? 'border-secondary-green' : 'border-gray-200'
       }`}

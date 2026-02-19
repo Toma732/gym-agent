@@ -12,7 +12,7 @@
 export { Button } from './ui/Button';
 export type { ButtonVariant, ButtonSize } from './ui/Button';
 
-export { Card, ImageCard } from './ui/Card';
+export { Card, ImageCard, StatCard } from './ui/Card';
 
 export { Input, TextArea } from './ui/Input';
 

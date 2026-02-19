@@ -4,35 +4,49 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: string;
   fullWidth?: boolean;
+  icon?: React.ReactNode;
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ label, error, fullWidth = false, className = '', ...props }, ref) => {
+  ({ label, error, fullWidth = false, icon, className = '', ...props }, ref) => {
     const widthClass = fullWidth ? 'w-full' : '';
 
     return (
       <div className={`${widthClass}`}>
         {label && (
-          <label className="block font-body text-body-sm text-gray-400 mb-sm">
+          <label className="block body-sm text-white/70 mb-2 font-medium">
             {label}
           </label>
         )}
-        <input
-          ref={ref}
-          className={`
-            h-input px-md rounded-button border-2 bg-gray-900
-            font-body text-body text-white
-            transition-all duration-200
-            focus:outline-none focus:border-primary-yellow
-            disabled:bg-gray-800 disabled:cursor-not-allowed
-            ${error ? 'border-secondary-red' : 'border-gray-700'}
-            ${widthClass}
-            ${className}
-          `.trim()}
-          {...props}
-        />
+        <div className="relative">
+          {icon && (
+            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40">
+              {icon}
+            </div>
+          )}
+          <input
+            ref={ref}
+            className={`
+              h-14 rounded-xl bg-white/5 backdrop-blur-sm
+              border-2 transition-all duration-200
+              font-body body text-white placeholder:text-white/40
+              focus:outline-none focus:border-primary-yellow focus:bg-white/10
+              disabled:bg-white/5 disabled:cursor-not-allowed disabled:opacity-50
+              ${error ? 'border-secondary-red' : 'border-white/10 hover:border-white/20'}
+              ${icon ? 'pl-12 pr-4' : 'px-4'}
+              ${widthClass}
+              ${className}
+            `.trim()}
+            {...props}
+          />
+        </div>
         {error && (
-          <p className="mt-sm font-body text-body-sm text-secondary-red">{error}</p>
+          <p className="mt-2 body-sm text-secondary-red flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            {error}
+          </p>
         )}
       </div>
     );
@@ -54,7 +68,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
     return (
       <div className={`${widthClass}`}>
         {label && (
-          <label className="block font-body text-body-sm text-gray-400 mb-sm">
+          <label className="block body-sm text-white/70 mb-2 font-medium">
             {label}
           </label>
         )}
@@ -62,20 +76,25 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
           ref={ref}
           rows={rows}
           className={`
-            px-md py-md rounded-button border-2 bg-gray-900
-            font-body text-body text-white
-            transition-all duration-200
-            focus:outline-none focus:border-primary-yellow
-            disabled:bg-gray-800 disabled:cursor-not-allowed
+            px-4 py-3 rounded-xl bg-white/5 backdrop-blur-sm
+            border-2 transition-all duration-200
+            font-body body text-white placeholder:text-white/40
+            focus:outline-none focus:border-primary-yellow focus:bg-white/10
+            disabled:bg-white/5 disabled:cursor-not-allowed disabled:opacity-50
             resize-none
-            ${error ? 'border-secondary-red' : 'border-gray-700'}
+            ${error ? 'border-secondary-red' : 'border-white/10 hover:border-white/20'}
             ${widthClass}
             ${className}
           `.trim()}
           {...props}
         />
         {error && (
-          <p className="mt-sm font-body text-body-sm text-secondary-red">{error}</p>
+          <p className="mt-2 body-sm text-secondary-red flex items-center gap-2">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            {error}
+          </p>
         )}
       </div>
     );
