@@ -39,9 +39,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     };
 
     const sizeClasses = {
-      default: variant === 'text' ? 'px-2 py-1 text-base' : 'h-14 px-8 text-base md:text-lg',
-      large: variant === 'text' ? 'px-3 py-2 text-lg md:text-xl' : 'h-16 px-10 text-lg md:text-xl',
-      small: variant === 'text' ? 'px-2 py-1 text-sm' : 'h-12 px-6 text-sm md:text-base',
+      default: variant === 'text' ? 'px-2 py-1 text-base' : 'h-14 px-10 text-base md:text-lg',
+      large: variant === 'text' ? 'px-3 py-2 text-lg md:text-xl' : 'h-16 px-12 text-lg md:text-xl',
+      small: variant === 'text' ? 'px-2 py-1 text-sm' : 'h-12 px-8 text-sm md:text-base',
     };
 
     const widthClass = fullWidth ? 'w-full' : '';

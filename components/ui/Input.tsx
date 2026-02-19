@@ -33,7 +33,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
               focus:outline-none focus:border-primary-yellow focus:bg-white/10
               disabled:bg-white/5 disabled:cursor-not-allowed disabled:opacity-50
               ${error ? 'border-secondary-red' : 'border-white/10 hover:border-white/20'}
-              ${icon ? 'pl-12 pr-4' : 'px-4'}
+              ${icon ? 'pl-12 pr-5' : 'px-5'}
               ${widthClass}
               ${className}
             `.trim()}
@@ -76,9 +76,9 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
           ref={ref}
           rows={rows}
           className={`
-            px-4 py-3 rounded-xl bg-white/5 backdrop-blur-sm
+            px-5 py-4 rounded-xl bg-white/5 backdrop-blur-sm
             border-2 transition-all duration-200
-            font-body body text-white placeholder:text-white/40
+            font-body body text-white placeholder:text-white/40 leading-relaxed
             focus:outline-none focus:border-primary-yellow focus:bg-white/10
             disabled:bg-white/5 disabled:cursor-not-allowed disabled:opacity-50
             resize-none

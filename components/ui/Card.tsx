@@ -15,7 +15,7 @@ export const Card: React.FC<CardProps> = ({
   className = '',
   onClick,
 }) => {
-  const baseClasses = 'p-6 md:p-8 transition-all duration-300';
+  const baseClasses = 'p-5 sm:p-6 md:p-8 transition-all duration-300';
 
   const variantClasses = {
     glass: 'glass-card',
@@ -136,9 +136,9 @@ export const StatCard: React.FC<StatCardProps> = ({
   };
 
   return (
-    <div className={`glass-card p-4 md:p-6 ${variantAccents[variant]} ${className}`}>
-      <div className="flex items-start justify-between mb-3">
-        <span className="body-sm text-white/60 uppercase tracking-wide">{label}</span>
+    <div className={`glass-card p-5 sm:p-6 ${variantAccents[variant]} ${className}`}>
+      <div className="flex items-start justify-between mb-4">
+        <span className="body-sm text-white/60 uppercase tracking-wide font-medium">{label}</span>
         {icon && <div className="text-white/40">{icon}</div>}
       </div>
       

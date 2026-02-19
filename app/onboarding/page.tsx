@@ -69,11 +69,11 @@ export default function OnboardingFirstScreen() {
               </div>
 
               {/* Primary CTA */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
+              <div className="flex justify-center px-4">
                 <Button
                   onClick={handleStartNow}
                   size="large"
-                  fullWidth
+                  className="w-full sm:w-auto sm:min-w-[280px]"
                   glow
                 >
                   Start Your Journey
@@ -91,18 +91,18 @@ export default function OnboardingFirstScreen() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-children">
               {steps.map((step) => (
                 <Card key={step.number} variant="glass" hover className="min-w-0">
-                  <div className="space-y-4">
+                  <div className="space-y-5">
                     {/* Step Number */}
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-yellow/20 border border-primary-yellow/30">
-                      <span className="heading-3 text-primary-yellow">{step.number}</span>
+                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary-yellow/20 border border-primary-yellow/30">
+                      <span className="heading-3 text-primary-yellow font-bold">{step.number}</span>
                     </div>
                     
                     {/* Step Content */}
-                    <div>
-                      <h3 className="heading-3 text-white mb-2">
+                    <div className="space-y-3">
+                      <h3 className="heading-3 text-white font-semibold leading-tight">
                         {step.title}
                       </h3>
-                      <p className="body text-white/60">
+                      <p className="body text-white/60 leading-relaxed">
                         {step.description}
                       </p>
                     </div>
@@ -136,12 +136,12 @@ export default function OnboardingFirstScreen() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {transformations.map((item) => (
                 <div key={item.id} className="space-y-3">
-                  <div className="aspect-square rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center group hover:border-primary-yellow/30 transition-all duration-300">
-                    <div className="text-center">
-                      <svg className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-2 text-white/20 group-hover:text-white/30 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="aspect-square rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center group hover:border-primary-yellow/30 transition-all duration-300 p-6">
+                    <div className="text-center space-y-3">
+                      <svg className="w-12 h-12 md:w-16 md:h-16 mx-auto text-white/20 group-hover:text-white/30 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                       </svg>
-                      <span className="body-sm text-white/40">{item.label}</span>
+                      <span className="body-sm text-white/40 font-medium">{item.label}</span>
                     </div>
                   </div>
                 </div>
@@ -151,39 +151,41 @@ export default function OnboardingFirstScreen() {
 
           {/* Final CTA Section with Stats */}
           <section className="section-spacing">
-            <Card variant="elevated" className="text-center space-y-8">
-              <div className="space-y-4 px-4">
-                <h2 className="heading-2 text-white">
+            <Card variant="elevated" className="text-center">
+              <div className="space-y-6 mb-8">
+                <h2 className="heading-2 text-white px-4">
                   Ready to transform?
                 </h2>
-                <p className="body-lg text-white/70 mx-auto" style={{ maxWidth: '650px' }}>
+                <p className="body-lg text-white/70 mx-auto px-4 leading-relaxed" style={{ maxWidth: '650px' }}>
                   Start your personalized fitness journey today. No credit card required.
                 </p>
               </div>
 
               {/* Quick Stats */}
-              <div className="grid grid-cols-3 gap-6 py-6 border-y border-white/10">
-                <div>
-                  <div className="heading-2 text-primary-yellow mb-1">10K+</div>
-                  <div className="body-sm text-white/60">Active Users</div>
+              <div className="grid grid-cols-3 gap-4 sm:gap-8 py-8 my-8 border-y border-white/10">
+                <div className="space-y-2">
+                  <div className="heading-2 text-primary-yellow font-bold">10K+</div>
+                  <div className="body-sm text-white/60 font-medium">Active Users</div>
                 </div>
-                <div>
-                  <div className="heading-2 text-primary-yellow mb-1">4.9★</div>
-                  <div className="body-sm text-white/60">App Rating</div>
+                <div className="space-y-2">
+                  <div className="heading-2 text-primary-yellow font-bold">4.9★</div>
+                  <div className="body-sm text-white/60 font-medium">App Rating</div>
                 </div>
-                <div>
-                  <div className="heading-2 text-primary-yellow mb-1">95%</div>
-                  <div className="body-sm text-white/60">Success Rate</div>
+                <div className="space-y-2">
+                  <div className="heading-2 text-primary-yellow font-bold">95%</div>
+                  <div className="body-sm text-white/60 font-medium">Success Rate</div>
                 </div>
               </div>
 
-              <Button
-                onClick={handleStartNow}
-                size="large"
-                fullWidth
-              >
-                Get Started Now
-              </Button>
+              <div className="pt-2">
+                <Button
+                  onClick={handleStartNow}
+                  size="large"
+                  className="w-full sm:w-auto sm:min-w-[320px]"
+                >
+                  Get Started Now
+                </Button>
+              </div>
             </Card>
           </section>
 
