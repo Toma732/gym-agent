@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import OpenAI from 'openai'
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-})
-
 export async function POST(request: NextRequest) {
+  const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY
+  })
+
   try {
     const { gap, frequency = 4 } = await request.json()
 
