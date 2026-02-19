@@ -83,7 +83,7 @@ export default function AssessPage() {
                   Consistency
                 </h3>
                 <p className="font-body text-body-sm text-gray-700">
-                  You're doing great! Keep it up.
+                  You&apos;re doing great! Keep it up.
                 </p>
               </div>
               <CircularProgress
@@ -100,7 +100,7 @@ export default function AssessPage() {
               AI Analysis
             </h3>
             <p className="font-body text-body text-gray-900">
-              You're building momentum! Your chest and shoulders are responding
+              You&apos;re building momentum! Your chest and shoulders are responding
               well to the training stimulus. Focus on progressive overload in
               Week 2 to maintain growth.
             </p>
@@ -161,7 +161,7 @@ export default function AssessPage() {
           </div>
 
           <p className="font-body text-body-sm text-gray-700 mb-lg">
-            Upload daily progress photos. We'll automatically organize them by
+            Upload daily progress photos. We&apos;ll automatically organize them by
             week to track your transformation.
           </p>
 

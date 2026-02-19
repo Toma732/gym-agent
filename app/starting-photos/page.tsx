@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
 export default function StartingPhotos() {
-  const [goalAnalysis, setGoalAnalysis] = useState<any>(null)
+  const [goalAnalysis, setGoalAnalysis] = useState<unknown>(null)
   const [photos, setPhotos] = useState<{
     front: string | null
     flex: string | null

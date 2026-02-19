@@ -9,7 +9,7 @@ import { TextArea } from '@/components/ui/Input';
 
 export default function OnboardingGoal() {
   const router = useRouter();
-  const [uploadedGoals, setUploadedGoals] = useState<string[]>([]);
+  const [uploadedGoals] = useState<string[]>([]);
   const [promptMode, setPromptMode] = useState(false);
   const [promptText, setPromptText] = useState('');
 
@@ -41,7 +41,7 @@ export default function OnboardingGoal() {
           </h1>
           <p className="font-body text-body text-gray-700 mb-lg">
             Upload photos of your goal physique, or describe it in words. This
-            helps our AI understand exactly what you're working towards.
+            helps our AI understand exactly what you&apos;re working towards.
           </p>
 
           {/* Upload or Prompt Toggle */}

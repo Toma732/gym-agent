@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card } from '../ui/Card';
 import { Button } from '../ui/Button';
 import { StatusBadge } from '../ui/Progress';
+import { CompletionAnimation } from '../ui/CompletionAnimation';
 
 export interface DayData {
   date: string; // e.g., "Mon, Feb 19"
@@ -29,6 +30,14 @@ export const DayComponent: React.FC<DayComponentProps> = ({
   onShowDetails,
 }) => {
   const [detailsExpanded, setDetailsExpanded] = useState(false);
+  const [showCompletion, setShowCompletion] = useState(false);
+
+  const handleLogWorkout = () => {
+    setShowCompletion(true);
+    if (onLogWorkout) {
+      onLogWorkout();
+    }
+  };
 
   const toggleDetails = () => {
     if (onShowDetails) {
@@ -61,7 +70,7 @@ export const DayComponent: React.FC<DayComponentProps> = ({
               <Button
                 variant="primary"
                 size="small"
-                onClick={onLogWorkout}
+                onClick={handleLogWorkout}
               >
                 Log Workout
               </Button>
@@ -94,6 +103,13 @@ export const DayComponent: React.FC<DayComponentProps> = ({
           </div>
         </div>
       )}
+
+      {/* Completion Animation */}
+      <CompletionAnimation
+        show={showCompletion}
+        onComplete={() => setShowCompletion(false)}
+        message={`${day.focus} - Complete! 💪`}
+      />
     </Card>
   );
 };

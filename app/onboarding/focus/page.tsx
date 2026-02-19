@@ -81,7 +81,7 @@ export default function OnboardingFocus() {
             Your Focus Areas
           </h1>
           <p className="font-body text-body text-gray-700 mb-lg">
-            Based on your goal and baseline, we've identified key areas to focus
+            Based on your goal and baseline, we&apos;ve identified key areas to focus
             on. Review and refine each one to ensure they match your vision.
           </p>
 

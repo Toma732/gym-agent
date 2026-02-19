@@ -91,7 +91,7 @@ export default function OnboardingPlan() {
             Your Training Plan
           </h1>
           <p className="font-body text-body text-gray-700 mb-lg">
-            Here's your personalized plan to reach your goal. The plan runs for{' '}
+            Here&apos;s your personalized plan to reach your goal. The plan runs for{' '}
             <span className="font-medium text-primary-black">6 weeks</span> and
             includes a reassessment to optimize your next phase.
           </p>
@@ -99,7 +99,7 @@ export default function OnboardingPlan() {
           {/* Motivation Card */}
           <Card className="bg-secondary-green bg-opacity-20 border-secondary-green">
             <p className="font-display text-h3 text-primary-black mb-sm">
-              You've got this! 💪
+              You&apos;ve got this! 💪
             </p>
             <p className="font-body text-body text-gray-900">
               Stay consistent, track your progress, and trust the process. Your
@@ -147,8 +147,8 @@ export default function OnboardingPlan() {
                   Week 7: Assessment & Optimization
                 </h3>
                 <p className="font-body text-body text-gray-700 mb-md">
-                  At the end of week 6, you'll reassess your progress. Based on
-                  your results, we'll optimize your next training phase.
+                  At the end of week 6, you&apos;ll reassess your progress. Based on
+                  your results, we&apos;ll optimize your next training phase.
                 </p>
                 <p className="font-body text-body-sm text-secondary-blue">
                   🔒 Unlocks after Week 6
@@ -161,7 +161,7 @@ export default function OnboardingPlan() {
         {/* CTA */}
         <section className="sticky bottom-md">
           <Button variant="primary" fullWidth onClick={handleStart}>
-            Let's Go! 🚀
+            Let&apos;s Go! 🚀
           </Button>
         </section>
       </main>

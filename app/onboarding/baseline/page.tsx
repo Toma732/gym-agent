@@ -8,7 +8,7 @@ import { Card, ImageCard } from '@/components/ui/Card';
 
 export default function OnboardingBaseline() {
   const router = useRouter();
-  const [uploadedBaseline, setUploadedBaseline] = useState<string[]>([]);
+  const [uploadedBaseline] = useState<string[]>([]);
 
   const handleUpload = () => {
     // TODO: Implement file upload

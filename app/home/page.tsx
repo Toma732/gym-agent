@@ -6,6 +6,7 @@ import { BottomNav } from '@/components/layout/BottomNav';
 import { Card } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { WeekComponent, WeekData } from '@/components/home/WeekComponent';
+import { StreakCounter } from '@/components/home/StreakCounter';
 
 export default function HomePage() {
   const [profileExpanded, setProfileExpanded] = useState(false);
@@ -17,7 +18,7 @@ export default function HomePage() {
     weight: '75 kg',
     imageUrl: '', // Placeholder
     dailyQuote:
-      '"The only bad workout is the one that didn't happen." – Unknown',
+      '"The only bad workout is the one that didn\'t happen." - Unknown',
   };
 
   // Mock week data
@@ -133,6 +134,11 @@ export default function HomePage() {
               </p>
             </div>
           </Card>
+        </section>
+
+        {/* Streak Counter */}
+        <section className="mb-xl">
+          <StreakCounter currentStreak={5} longestStreak={12} />
         </section>
 
         {/* Weekly Schedule */}

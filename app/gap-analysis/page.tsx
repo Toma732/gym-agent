@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
 export default function GapAnalysis() {
-  const [goalAnalysis, setGoalAnalysis] = useState<any>(null)
-  const [currentAnalysis, setCurrentAnalysis] = useState<any>(null)
-  const [gapAnalysis, setGapAnalysis] = useState<any>(null)
+  const [goalAnalysis, setGoalAnalysis] = useState<unknown>(null)
+  const [currentAnalysis, setCurrentAnalysis] = useState<unknown>(null)
+  const [gapAnalysis, setGapAnalysis] = useState<unknown>(null)
   const [isGenerating, setIsGenerating] = useState(false)
-  const [workoutPlan, setWorkoutPlan] = useState<any>(null)
+  const [workoutPlan, setWorkoutPlan] = useState<unknown>(null)
   const router = useRouter()
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function GapAnalysis() {
     generateGapAnalysis(JSON.parse(goal), JSON.parse(current))
   }, [router])
 
-  const generateGapAnalysis = async (goal: any, current: any) => {
+  const generateGapAnalysis = async (goal: unknown, current: unknown) => {
     setIsGenerating(true)
     
     try {
@@ -86,7 +86,7 @@ export default function GapAnalysis() {
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white mb-4">Your Transformation Path 🎯</h1>
           <p className="text-gray-300 text-lg">
-            Here's what you need to work on to reach your goal
+            Here&apos;s what you need to work on to reach your goal
           </p>
         </div>
 
@@ -110,7 +110,7 @@ export default function GapAnalysis() {
               {gapAnalysis.priorities && gapAnalysis.priorities.length > 0 ? (
                 <>
                   <div className="grid md:grid-cols-2 gap-6">
-                    {gapAnalysis.priorities.map((priority: any, index: number) => (
+                    {gapAnalysis.priorities.map((priority: Record<string, unknown>, index: number) => (
                       <div key={index} className="bg-purple-500/20 rounded-lg p-4">
                         <h3 className="text-xl font-semibold text-white mb-2">
                           {priority.area}
@@ -165,14 +165,14 @@ export default function GapAnalysis() {
                 <h2 className="text-3xl font-bold text-white mb-6">Your Personalized Workout Plan</h2>
                 
                 <div className="space-y-6">
-                  {workoutPlan.weeklyPlan?.map((day: any, index: number) => (
+                  {workoutPlan.weeklyPlan?.map((day: Record<string, unknown>, index: number) => (
                     <div key={index} className="bg-white/5 rounded-lg p-6">
                       <h3 className="text-2xl font-semibold text-purple-400 mb-4">
                         Day {index + 1}: {day.focus}
                       </h3>
                       
                       <div className="space-y-3">
-                        {day.exercises?.map((exercise: any, exIndex: number) => (
+                        {day.exercises?.map((exercise: Record<string, unknown>, exIndex: number) => (
                           <div key={exIndex} className="bg-white/5 rounded p-3">
                             <div className="flex justify-between items-start">
                               <div>
