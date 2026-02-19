@@ -30,8 +30,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       primary:
         'bg-primary-yellow text-primary-black hover:bg-yellow-400 focus:ring-primary-yellow',
       secondary:
-        'bg-transparent border-2 border-primary-black text-primary-black hover:bg-gray-100 focus:ring-primary-black',
-      text: 'bg-transparent text-secondary-blue underline-offset-4 hover:underline focus:ring-secondary-blue p-0',
+        'bg-transparent border-2 border-white text-white hover:bg-gray-800 focus:ring-white',
+      text: 'bg-transparent text-primary-yellow underline-offset-4 hover:underline focus:ring-primary-yellow p-0',
     };
 
     const sizeClasses = {

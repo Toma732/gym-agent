@@ -18,9 +18,9 @@ export const Card: React.FC<CardProps> = ({
   const baseClasses = 'rounded-card p-4 sm:p-6';
 
   const variantClasses = {
-    default: 'bg-white border border-gray-200 shadow-card',
-    outlined: 'bg-white border-2 border-primary-black',
-    subtle: 'bg-gray-100 border border-gray-200',
+    default: 'bg-gray-900 border border-gray-700 shadow-card',
+    outlined: 'bg-gray-900 border-2 border-primary-yellow',
+    subtle: 'bg-gray-800 border border-gray-700',
   };
 
   const hoverClass = hover ? 'card-hover cursor-pointer' : '';
@@ -61,11 +61,11 @@ export const ImageCard: React.FC<ImageCardProps> = ({
   if (placeholder || !src) {
     return (
       <div
-        className={`${aspectClasses[aspectRatio]} rounded-card border-2 border-dashed border-gray-200 bg-gray-100 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-200 transition ${className}`}
+        className={`${aspectClasses[aspectRatio]} rounded-card border-2 border-dashed border-gray-700 bg-gray-900 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-800 transition ${className}`}
         onClick={onUpload}
         role={onUpload ? 'button' : undefined}
       >
-        <div className="text-gray-300 mb-2">
+        <div className="text-gray-500 mb-2">
           <svg
             className="w-12 h-12"
             fill="none"
@@ -86,7 +86,7 @@ export const ImageCard: React.FC<ImageCardProps> = ({
             />
           </svg>
         </div>
-        <span className="font-body text-body-sm text-gray-300">Add photo</span>
+        <span className="font-body text-body-sm text-gray-500">Add photo</span>
       </div>
     );
   }

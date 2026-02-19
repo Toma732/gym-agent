@@ -33,14 +33,14 @@ export default function OnboardingGoal() {
     <div className="min-h-screen bg-primary-black pb-2xl">
       <TopNav showAuth={false} />
 
-      <main className="pt-nav-top pb-24 min-h-screen">
-        <div className="max-w-mobile mx-auto px-4 sm:px-6 py-6 sm:py-8">
+      <main className="main-content min-h-screen">
+        <div className="container-responsive py-6 sm:py-8">
         {/* Header */}
-        <section className="mt-lg mb-xl">
+        <section className="mt-lg content-spacing">
           <h1 className="font-display text-h1 text-white mb-md">
             Set Your Goal
           </h1>
-          <p className="font-body text-body text-gray-700 mb-lg">
+          <p className="font-body text-body text-gray-400 section-spacing">
             Upload photos of your goal physique, or describe it in words. This
             helps our AI understand exactly what you&apos;re working towards.
           </p>
@@ -52,7 +52,7 @@ export default function OnboardingGoal() {
                 <>
                   <div
                     onClick={handleUpload}
-                    className="cursor-pointer border-2 border-dashed border-gray-200 rounded-card p-xl bg-gray-100 hover:bg-gray-200 transition flex flex-col items-center justify-center"
+                    className="cursor-pointer border-2 border-dashed border-gray-700 rounded-card p-xl bg-gray-900 hover:bg-gray-800 transition flex flex-col items-center justify-center"
                   >
                     <svg
                       className="w-16 h-16 text-gray-300 mb-md"
@@ -67,7 +67,7 @@ export default function OnboardingGoal() {
                         d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                       />
                     </svg>
-                    <span className="font-body text-body text-gray-700">
+                    <span className="font-body text-body text-gray-400">
                       Upload Goal Photos
                     </span>
                   </div>
@@ -106,7 +106,7 @@ export default function OnboardingGoal() {
         {/* Your Goal (Uploaded Images) */}
         {uploadedGoals.length > 0 && (
           <section className="mb-xl">
-            <h2 className="font-display text-h2 text-white mb-lg">
+            <h2 className="font-display text-h2 text-white section-spacing">
               Your Goal
             </h2>
             <div className="grid grid-cols-2 gap-md">
@@ -119,7 +119,7 @@ export default function OnboardingGoal() {
 
         {/* Popular Goals */}
         <section className="mb-xl">
-          <h2 className="font-display text-h2 text-white mb-lg">
+          <h2 className="font-display text-h2 text-white section-spacing">
             Popular Goals
           </h2>
           <div className="space-y-lg">

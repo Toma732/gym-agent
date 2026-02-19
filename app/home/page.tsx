@@ -89,9 +89,9 @@ export default function HomePage() {
       />
 
       <main className="pt-nav-top pb-nav-bottom min-h-screen">
-        <div className="max-w-mobile mx-auto px-4 sm:px-6 py-6 sm:py-8">
+        <div className="container-responsive py-6 sm:py-8">
         {/* Profile Card */}
-        <section className="mt-lg mb-xl">
+        <section className="mt-lg content-spacing">
           <Card className="relative">
             <div className="flex items-start gap-md">
               {/* Profile Image */}
@@ -114,10 +114,10 @@ export default function HomePage() {
                 <h2 className="font-display text-h2 text-white mb-xs">
                   {userData.name}
                 </h2>
-                <p className="font-body text-body-sm text-gray-700">
+                <p className="font-body text-body-sm text-gray-400">
                   DOB: {new Date(userData.dob).toLocaleDateString()}
                 </p>
-                <p className="font-body text-body-sm text-gray-700">
+                <p className="font-body text-body-sm text-gray-400">
                   Weight: {userData.weight}
                 </p>
               </div>
@@ -129,8 +129,8 @@ export default function HomePage() {
             </div>
 
             {/* Daily Quote */}
-            <div className="mt-lg pt-lg border-t border-gray-200">
-              <p className="font-body text-body italic text-gray-700">
+            <div className="mt-lg pt-lg border-t border-gray-700">
+              <p className="font-body text-body italic text-gray-400">
                 {userData.dailyQuote}
               </p>
             </div>
@@ -144,7 +144,7 @@ export default function HomePage() {
 
         {/* Weekly Schedule */}
         <section className="mb-xl">
-          <h2 className="font-display text-h2 text-white mb-lg">
+          <h2 className="font-display text-h2 text-white section-spacing">
             Your Training Schedule
           </h2>
 
@@ -178,14 +178,14 @@ export default function HomePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-display text-h3 text-gray-700 mb-sm">
+                <h3 className="font-display text-h3 text-gray-400 mb-sm">
                   Week 7: Assessment
                 </h3>
-                <p className="font-body text-body text-gray-700 mb-sm">
+                <p className="font-body text-body text-gray-400 mb-sm">
                   Complete all weeks to unlock your progress assessment and next
                   training phase.
                 </p>
-                <p className="font-body text-body-sm text-gray-700">
+                <p className="font-body text-body-sm text-gray-400">
                   Scheduled for: March 15, 2026
                 </p>
               </div>

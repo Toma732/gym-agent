@@ -104,7 +104,7 @@ export default function GapAnalysis() {
         ) : gapAnalysis ? (
           <>
             {/* Gap Details */}
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 mb-8">
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 section-spacing">
               <h2 className="text-3xl font-bold text-white mb-6">What You Need to Develop</h2>
               
               {(gapAnalysis as {priorities?: unknown[]}).priorities && (gapAnalysis as {priorities: unknown[]}).priorities.length > 0 ? (
@@ -153,7 +153,7 @@ export default function GapAnalysis() {
               <button
                 onClick={generateWorkoutPlan}
                 disabled={isGenerating}
-                className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 text-white font-semibold py-4 px-6 rounded-xl transition transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed mb-8"
+                className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 text-white font-semibold py-4 px-6 rounded-xl transition transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed section-spacing"
               >
                 {isGenerating ? 'Generating your plan...' : 'Generate My Workout Plan →'}
               </button>

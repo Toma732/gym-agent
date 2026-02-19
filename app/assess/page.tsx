@@ -45,15 +45,15 @@ export default function AssessPage() {
       <TopNav userName="Alex" />
 
       <main className="pt-nav-top pb-nav-bottom min-h-screen">
-        <div className="max-w-mobile mx-auto px-4 sm:px-6 py-6 sm:py-8">
+        <div className="container-responsive py-6 sm:py-8">
         {/* Progress Overview */}
-        <section className="mt-lg mb-xl">
-          <h1 className="font-display text-h1 text-white mb-lg">
+        <section className="mt-lg content-spacing">
+          <h1 className="font-display text-h1 text-white section-spacing">
             Your Progress
           </h1>
 
           <Card className="mb-lg">
-            <h2 className="font-display text-h2 text-white mb-lg">
+            <h2 className="font-display text-h2 text-white section-spacing">
               Current Progress
             </h2>
 
@@ -78,12 +78,12 @@ export default function AssessPage() {
             </div>
 
             {/* Consistency */}
-            <div className="flex items-center justify-between pt-lg border-t border-gray-200">
+            <div className="flex items-center justify-between pt-lg border-t border-gray-700">
               <div>
                 <h3 className="font-display text-h3 text-white mb-xs">
                   Consistency
                 </h3>
-                <p className="font-body text-body-sm text-gray-700">
+                <p className="font-body text-body-sm text-gray-400">
                   You&apos;re doing great! Keep it up.
                 </p>
               </div>
@@ -110,7 +110,7 @@ export default function AssessPage() {
 
         {/* Your Goals */}
         <section className="mb-xl">
-          <h2 className="font-display text-h2 text-white mb-lg">
+          <h2 className="font-display text-h2 text-white section-spacing">
             Your Goals
           </h2>
           <div className="grid grid-cols-2 gap-md">
@@ -121,7 +121,7 @@ export default function AssessPage() {
                   alt={goal.name}
                   placeholder={!goal.image}
                 />
-                <p className="font-body text-body-sm text-gray-700 text-center mt-sm">
+                <p className="font-body text-body-sm text-gray-400 text-center mt-sm">
                   {goal.name}
                 </p>
               </div>
@@ -131,7 +131,7 @@ export default function AssessPage() {
 
         {/* Your Baseline */}
         <section className="mb-xl">
-          <h2 className="font-display text-h2 text-white mb-lg">
+          <h2 className="font-display text-h2 text-white section-spacing">
             Your Baseline
           </h2>
           <div className="grid grid-cols-2 gap-md">
@@ -142,7 +142,7 @@ export default function AssessPage() {
                   alt={`Baseline ${index + 1}`}
                   placeholder={!item.image}
                 />
-                <p className="font-body text-caption text-gray-700 text-center mt-sm">
+                <p className="font-body text-caption text-gray-400 text-center mt-sm">
                   {item.date}
                 </p>
               </div>
@@ -152,7 +152,7 @@ export default function AssessPage() {
 
         {/* Your Tracking */}
         <section className="mb-xl">
-          <div className="flex items-center justify-between mb-lg">
+          <div className="flex items-center justify-between section-spacing">
             <h2 className="font-display text-h2 text-white">
               Your Tracking
             </h2>
@@ -161,7 +161,7 @@ export default function AssessPage() {
             </Button>
           </div>
 
-          <p className="font-body text-body-sm text-gray-700 mb-lg">
+          <p className="font-body text-body-sm text-gray-400 section-spacing">
             Upload daily progress photos. We&apos;ll automatically organize them by
             week to track your transformation.
           </p>
@@ -180,7 +180,7 @@ export default function AssessPage() {
                       placeholder={!item.image}
                       aspectRatio="4:3"
                     />
-                    <p className="font-body text-caption text-gray-700 text-center mt-xs">
+                    <p className="font-body text-caption text-gray-400 text-center mt-xs">
                       {item.date}
                     </p>
                   </div>
@@ -198,7 +198,7 @@ export default function AssessPage() {
 
           {/* Empty State for Future Weeks */}
           <Card variant="subtle" className="text-center py-xl">
-            <p className="font-body text-body text-gray-700">
+            <p className="font-body text-body text-gray-400">
               More weeks will appear as you progress through your plan.
             </p>
           </Card>

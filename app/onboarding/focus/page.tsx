@@ -74,14 +74,14 @@ export default function OnboardingFocus() {
     <div className="min-h-screen bg-primary-black pb-2xl">
       <TopNav showAuth={false} />
 
-      <main className="pt-nav-top pb-24 min-h-screen">
-        <div className="max-w-mobile mx-auto px-4 sm:px-6 py-6 sm:py-8">
+      <main className="main-content min-h-screen">
+        <div className="container-responsive py-6 sm:py-8">
         {/* Header */}
-        <section className="mt-lg mb-xl">
+        <section className="mt-lg content-spacing">
           <h1 className="font-display text-h1 text-white mb-md">
             Your Focus Areas
           </h1>
-          <p className="font-body text-body text-gray-700 mb-lg">
+          <p className="font-body text-body text-gray-400 section-spacing">
             Based on your goal and baseline, we&apos;ve identified key areas to focus
             on. Review and refine each one to ensure they match your vision.
           </p>
@@ -101,7 +101,7 @@ export default function OnboardingFocus() {
 
         {/* Focus Areas */}
         <section className="mb-xl">
-          <h2 className="font-display text-h2 text-white mb-lg">
+          <h2 className="font-display text-h2 text-white section-spacing">
             Focus Areas ({focusAreas.filter((a) => a.approved).length} /{' '}
             {focusAreas.length} approved)
           </h2>
@@ -127,7 +127,7 @@ export default function OnboardingFocus() {
             Build Your Plan
           </Button>
           {!allApproved && (
-            <p className="text-center font-body text-body-sm text-gray-700 mt-sm">
+            <p className="text-center font-body text-body-sm text-gray-400 mt-sm">
               Approve all areas to continue
             </p>
           )}

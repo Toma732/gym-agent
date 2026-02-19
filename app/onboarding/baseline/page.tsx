@@ -36,14 +36,14 @@ export default function OnboardingBaseline() {
     <div className="min-h-screen bg-primary-black pb-2xl">
       <TopNav showAuth={false} />
 
-      <main className="pt-nav-top pb-24 min-h-screen">
-        <div className="max-w-mobile mx-auto px-4 sm:px-6 py-6 sm:py-8">
+      <main className="main-content min-h-screen">
+        <div className="container-responsive py-6 sm:py-8">
         {/* Header */}
-        <section className="mt-lg mb-xl">
+        <section className="mt-lg content-spacing">
           <h1 className="font-display text-h1 text-white mb-md">
             Set Your Baseline
           </h1>
-          <p className="font-body text-body text-gray-700 mb-lg">
+          <p className="font-body text-body text-gray-400 section-spacing">
             Upload photos of your current physique so we can track your progress
             accurately.
           </p>
@@ -60,7 +60,7 @@ export default function OnboardingBaseline() {
           <Card className="mb-md">
             <div
               onClick={handleUpload}
-              className="cursor-pointer border-2 border-dashed border-gray-200 rounded-card p-xl bg-gray-100 hover:bg-gray-200 transition flex flex-col items-center justify-center"
+              className="cursor-pointer border-2 border-dashed border-gray-700 rounded-card p-xl bg-gray-900 hover:bg-gray-800 transition flex flex-col items-center justify-center"
             >
               <svg
                 className="w-16 h-16 text-gray-300 mb-md"
@@ -81,7 +81,7 @@ export default function OnboardingBaseline() {
                   d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
                 />
               </svg>
-              <span className="font-body text-body text-gray-700">
+              <span className="font-body text-body text-gray-400">
                 Upload Baseline Photos
               </span>
             </div>
@@ -95,7 +95,7 @@ export default function OnboardingBaseline() {
         {/* Your Baseline (Uploaded Images) */}
         {uploadedBaseline.length > 0 && (
           <section className="mb-xl">
-            <h2 className="font-display text-h2 text-white mb-lg">
+            <h2 className="font-display text-h2 text-white section-spacing">
               Your Baseline
             </h2>
             <div className="grid grid-cols-2 gap-md">
@@ -112,7 +112,7 @@ export default function OnboardingBaseline() {
 
         {/* Common Baselines */}
         <section className="mb-xl">
-          <h2 className="font-display text-h2 text-white mb-lg">
+          <h2 className="font-display text-h2 text-white section-spacing">
             Common Starting Points
           </h2>
           <div className="grid grid-cols-2 gap-md">
@@ -123,7 +123,7 @@ export default function OnboardingBaseline() {
                 onClick={() => console.log('Selected:', baseline)}
                 className="text-center"
               >
-                <div className="aspect-square bg-gray-100 rounded-card mb-sm flex items-center justify-center">
+                <div className="aspect-square bg-gray-900 rounded-card mb-sm flex items-center justify-center">
                   <span className="font-body text-caption text-gray-300">
                     Example
                   </span>

@@ -131,7 +131,7 @@ export default function StartingPhotos() {
         <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20">
           
           {/* Photo Upload Grid */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="grid md:grid-cols-3 gap-6 section-spacing">
             <PhotoUploadBox type="front" label="Front (Relaxed)" required />
             <PhotoUploadBox type="flex" label="Front (Flexed)" required />
             <PhotoUploadBox type="back" label="Back" />

@@ -84,14 +84,14 @@ export default function OnboardingPlan() {
     <div className="min-h-screen bg-primary-black pb-2xl">
       <TopNav showAuth={false} />
 
-      <main className="pt-nav-top pb-24 min-h-screen">
-        <div className="max-w-mobile mx-auto px-4 sm:px-6 py-6 sm:py-8">
+      <main className="main-content min-h-screen">
+        <div className="container-responsive py-6 sm:py-8">
         {/* Header */}
-        <section className="mt-lg mb-xl">
+        <section className="mt-lg content-spacing">
           <h1 className="font-display text-h1 text-white mb-md">
             Your Training Plan
           </h1>
-          <p className="font-body text-body text-gray-700 mb-lg">
+          <p className="font-body text-body text-gray-400 section-spacing">
             Here&apos;s your personalized plan to reach your goal. The plan runs for{' '}
             <span className="font-medium text-white">6 weeks</span> and
             includes a reassessment to optimize your next phase.
@@ -111,7 +111,7 @@ export default function OnboardingPlan() {
 
         {/* Weeks Overview */}
         <section className="mb-xl">
-          <h2 className="font-display text-h2 text-white mb-lg">
+          <h2 className="font-display text-h2 text-white section-spacing">
             Weekly Breakdown
           </h2>
 
@@ -147,7 +147,7 @@ export default function OnboardingPlan() {
                 <h3 className="font-display text-h3 text-white mb-sm">
                   Week 7: Assessment & Optimization
                 </h3>
-                <p className="font-body text-body text-gray-700 mb-md">
+                <p className="font-body text-body text-gray-400 mb-md">
                   At the end of week 6, you&apos;ll reassess your progress. Based on
                   your results, we&apos;ll optimize your next training phase.
                 </p>

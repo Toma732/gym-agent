@@ -13,19 +13,19 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className={`${widthClass}`}>
         {label && (
-          <label className="block font-body text-body-sm text-gray-700 mb-sm">
+          <label className="block font-body text-body-sm text-gray-400 mb-sm">
             {label}
           </label>
         )}
         <input
           ref={ref}
           className={`
-            h-input px-md rounded-button border-2 bg-white
-            font-body text-body text-gray-900
+            h-input px-md rounded-button border-2 bg-gray-900
+            font-body text-body text-white
             transition-all duration-200
             focus:outline-none focus:border-primary-yellow
-            disabled:bg-gray-100 disabled:cursor-not-allowed
-            ${error ? 'border-secondary-red' : 'border-gray-200'}
+            disabled:bg-gray-800 disabled:cursor-not-allowed
+            ${error ? 'border-secondary-red' : 'border-gray-700'}
             ${widthClass}
             ${className}
           `.trim()}
@@ -54,7 +54,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
     return (
       <div className={`${widthClass}`}>
         {label && (
-          <label className="block font-body text-body-sm text-gray-700 mb-sm">
+          <label className="block font-body text-body-sm text-gray-400 mb-sm">
             {label}
           </label>
         )}
@@ -62,13 +62,13 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
           ref={ref}
           rows={rows}
           className={`
-            px-md py-md rounded-button border-2 bg-white
-            font-body text-body text-gray-900
+            px-md py-md rounded-button border-2 bg-gray-900
+            font-body text-body text-white
             transition-all duration-200
             focus:outline-none focus:border-primary-yellow
-            disabled:bg-gray-100 disabled:cursor-not-allowed
+            disabled:bg-gray-800 disabled:cursor-not-allowed
             resize-none
-            ${error ? 'border-secondary-red' : 'border-gray-200'}
+            ${error ? 'border-secondary-red' : 'border-gray-700'}
             ${widthClass}
             ${className}
           `.trim()}
