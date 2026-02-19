@@ -113,15 +113,15 @@ export default function GapAnalysis() {
                     {((gapAnalysis as {priorities: unknown[]}).priorities as Record<string, unknown>[]).map((priority: Record<string, unknown>, index: number) => (
                       <div key={index} className="bg-purple-500/20 rounded-lg p-4">
                         <h3 className="text-xl font-semibold text-white mb-2">
-                          {priority.area}
+                          {String(priority.area || '')}
                         </h3>
-                        <p className="text-gray-300 text-sm mb-2">{priority.description}</p>
+                        <p className="text-gray-300 text-sm mb-2">{String(priority.description || '')}</p>
                         <div className="flex items-center gap-2">
                           <span className="text-xs text-purple-300 font-medium">Priority:</span>
                           <div className="flex-1 bg-white/10 rounded-full h-2">
                             <div 
                               className="bg-purple-500 h-2 rounded-full"
-                              style={{ width: `${priority.priorityLevel}%` }}
+                              style={{ width: `${Number(priority.priorityLevel || 0)}%` }}
                             />
                           </div>
                         </div>
@@ -168,7 +168,7 @@ export default function GapAnalysis() {
                   {((workoutPlan as {weeklyPlan?: unknown[]})?.weeklyPlan as Record<string, unknown>[] | undefined)?.map((day: Record<string, unknown>, index: number) => (
                     <div key={index} className="bg-white/5 rounded-lg p-6">
                       <h3 className="text-2xl font-semibold text-purple-400 mb-4">
-                        Day {index + 1}: {day.focus}
+                        Day {index + 1}: {String(day.focus || '')}
                       </h3>
                       
                       <div className="space-y-3">
@@ -176,11 +176,11 @@ export default function GapAnalysis() {
                           <div key={exIndex} className="bg-white/5 rounded p-3">
                             <div className="flex justify-between items-start">
                               <div>
-                                <p className="text-white font-medium">{exercise.name}</p>
-                                <p className="text-gray-400 text-sm">{exercise.targetMuscle}</p>
+                                <p className="text-white font-medium">{String(exercise.name || '')}</p>
+                                <p className="text-gray-400 text-sm">{String(exercise.targetMuscle || '')}</p>
                               </div>
                               <div className="text-right">
-                                <p className="text-purple-300 text-sm">{exercise.sets} sets × {exercise.reps} reps</p>
+                                <p className="text-purple-300 text-sm">{String(exercise.sets || '')} sets × {String(exercise.reps || '')} reps</p>
                               </div>
                             </div>
                           </div>
