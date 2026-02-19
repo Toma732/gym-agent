@@ -1,26 +1,110 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Design System Fonts */
+  --font-display: var(--font-puff-square), system-ui, sans-serif;
+  --font-body: Calibri, system-ui, sans-serif;
+  
+  /* Primary Colors */
+  --color-primary-yellow: #FFE358;
+  --color-primary-black: #000000;
+  
+  /* Secondary Colors */
+  --color-secondary-green: #57CB72;
+  --color-secondary-red: #FF5858;
+  --color-secondary-blue: #588DFF;
+  
+  /* Neutral Scale */
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #E5E5E5;
+  --color-gray-300: #D4D4D4;
+  --color-gray-700: #404040;
+  --color-gray-900: #171717;
+  --color-white: #FFFFFF;
+  
+  /* Spacing (4px base) */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-white);
+  color: var(--color-gray-900);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* PuffSquare font face (placeholder - will work when OTF is added) */
+@font-face {
+  font-family: 'PuffSquare';
+  src: url('./fonts/PuffSquare-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Utility classes */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Button transitions */
+button, a[role="button"] {
+  transition: all 0.2s ease-in-out;
+}
+
+button:active, a[role="button"]:active {
+  transform: scale(0.98);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-secondary-blue);
+  outline-offset: 2px;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Skeleton loader animation */
+@keyframes skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.skeleton {
+  animation: skeleton-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background-color: var(--color-gray-200);
+  border-radius: 8px;
 }

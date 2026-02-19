@@ -1,0 +1,55 @@
+import React from 'react';
+
+export type ButtonVariant = 'primary' | 'secondary' | 'text';
+export type ButtonSize = 'default' | 'large' | 'small';
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  fullWidth?: boolean;
+  children: React.ReactNode;
+}
+
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      variant = 'primary',
+      size = 'default',
+      fullWidth = false,
+      className = '',
+      disabled = false,
+      children,
+      ...props
+    },
+    ref
+  ) => {
+    const baseClasses =
+      'font-display text-h3 rounded-button transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 active:scale-98 disabled:cursor-not-allowed disabled:opacity-50';
+
+    const variantClasses = {
+      primary:
+        'bg-primary-yellow text-primary-black hover:bg-yellow-400 focus:ring-primary-yellow',
+      secondary:
+        'bg-transparent border-2 border-primary-black text-primary-black hover:bg-gray-100 focus:ring-primary-black',
+      text: 'bg-transparent text-secondary-blue underline-offset-4 hover:underline focus:ring-secondary-blue p-0',
+    };
+
+    const sizeClasses = {
+      default: variant === 'text' ? 'px-4 py-2' : 'h-button px-8',
+      large: variant === 'text' ? 'px-6 py-3 text-h2' : 'h-20 px-12 text-h2',
+      small: variant === 'text' ? 'px-3 py-1 text-body' : 'h-12 px-6 text-body',
+    };
+
+    const widthClass = fullWidth ? 'w-full' : '';
+
+    const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${widthClass} ${className}`.trim();
+
+    return (
+      <button ref={ref} className={classes} disabled={disabled} {...props}>
+        {children}
+      </button>
+    );
+  }
+);
+
+Button.displayName = 'Button';

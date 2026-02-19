@@ -1,9 +1,25 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 
+// Load PuffSquare font (when OTF file is provided)
+// Placeholder: Will use system-ui until PuffSquare-Regular.otf is added to app/fonts/
+const puffSquare = localFont({
+  src: [
+    {
+      path: './fonts/PuffSquare-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-puff-square',
+  fallback: ['system-ui', 'sans-serif'],
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
-  title: "GymAgent - AI Fitness Coach",
-  description: "Transform your body with AI-powered personalized workout plans",
+  title: "Coach - AI Fitness Transformation",
+  description: "Enough guessing, time for results. AI-backed physique improvements.",
 };
 
 export default function RootLayout({
@@ -12,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html lang="en" className={puffSquare.variable}>
+      <body className="font-body antialiased bg-white text-gray-900">
         {children}
       </body>
     </html>
