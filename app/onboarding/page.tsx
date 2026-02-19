@@ -3,8 +3,6 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { TopNav } from '@/components/layout/TopNav';
-import { Button } from '@/components/ui/Button';
-import { Card } from '@/components/ui/Card';
 
 export default function OnboardingFirstScreen() {
   const router = useRouter();
@@ -19,115 +17,81 @@ export default function OnboardingFirstScreen() {
       <TopNav showAuth={true} />
 
       {/* Main Content */}
-      <main className="pt-nav-top pb-16 min-h-screen">
-        <div className="max-w-mobile mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        {/* Hero Section */}
-        <section className="mt-2xl mb-xl text-center">
-          <h1 className="font-display text-h1 text-primary-black mb-md">
-            Enough guessing, time for results
-          </h1>
-          <p className="font-body text-body text-gray-700 mb-lg">
-            AI backed Physique Improvements
-          </p>
-          <Button variant="primary" fullWidth onClick={handleStartNow}>
-            Start Now
-          </Button>
-        </section>
-
-        {/* How It Works */}
-        <section className="mb-xl">
-          <h2 className="font-display text-h2 text-primary-black mb-lg text-center">
-            How It Works
-          </h2>
+      <main className="pt-nav-top pb-16">
+        <div className="max-w-[402px] mx-auto px-4">
           
-          <div className="space-y-md">
-            {/* Step 1 */}
-            <Card>
-              <div className="flex items-start gap-md">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary-yellow rounded-full flex items-center justify-center">
-                  <span className="font-display text-h3 text-primary-black">1</span>
-                </div>
-                <div>
-                  <h3 className="font-display text-h3 text-primary-black mb-xs">
-                    Define Your Goal
-                  </h3>
-                  <p className="font-body text-body text-gray-700">
-                    Upload a photo of your goal physique or describe it in words
-                  </p>
-                </div>
-              </div>
-            </Card>
+          {/* Hero Section */}
+          <section className="mt-12 mb-8 text-center">
+            <div className="bg-primary-yellow rounded-lg py-4 px-6 mb-4">
+              <h1 className="font-display text-[20px] leading-tight text-primary-black mb-2">
+                Enough guessing, time for results
+              </h1>
+              <p className="font-body text-[20px] leading-tight text-gray-900">
+                AI backed Physique Improvements
+              </p>
+            </div>
+            <button
+              onClick={handleStartNow}
+              className="w-full bg-primary-yellow font-display text-[20px] text-primary-black py-3 px-6 rounded-lg hover:bg-yellow-400 transition"
+            >
+              Start Now
+            </button>
+          </section>
 
-            {/* Step 2 */}
-            <Card>
-              <div className="flex items-start gap-md">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary-yellow rounded-full flex items-center justify-center">
-                  <span className="font-display text-h3 text-primary-black">2</span>
-                </div>
-                <div>
-                  <h3 className="font-display text-h3 text-primary-black mb-xs">
-                    AI Analyzes the Gap
-                  </h3>
-                  <p className="font-body text-body text-gray-700">
-                    Our AI identifies focus areas and creates a personalized plan
-                  </p>
-                </div>
-              </div>
-            </Card>
+          {/* How It Works */}
+          <section className="mb-8">
+            <h2 className="font-display text-[20px] text-primary-black text-center mb-6">
+              How It Works
+            </h2>
+            
+            <div className="bg-white border border-gray-200 rounded-lg p-6">
+              <p className="font-body text-[20px] text-gray-900 leading-relaxed whitespace-pre-line">
+                {`Step 1 - Upload your ideal physique
 
-            {/* Step 3 */}
-            <Card>
-              <div className="flex items-start gap-md">
-                <div className="flex-shrink-0 w-12 h-12 bg-primary-yellow rounded-full flex items-center justify-center">
-                  <span className="font-display text-h3 text-primary-black">3</span>
+Step 2 - Set your starting point
+
+Step 3 - Follow the plan and monitor daily`}
+              </p>
+            </div>
+          </section>
+
+          {/* Join the Crew */}
+          <section className="mb-8">
+            <h2 className="font-display text-[20px] text-primary-black text-center mb-6">
+              Join the crew
+            </h2>
+            
+            <div className="grid grid-cols-2 gap-4">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="space-y-2">
+                  <div className="aspect-square bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center">
+                    <span className="font-body text-sm text-gray-300">Before</span>
+                  </div>
+                  <div className="aspect-square bg-gray-100 border border-gray-200 rounded-lg flex items-center justify-center">
+                    <span className="font-body text-sm text-gray-300">After</span>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-display text-h3 text-primary-black mb-xs">
-                    Train & Track Progress
-                  </h3>
-                  <p className="font-body text-body text-gray-700">
-                    Follow your plan, log workouts, and watch your transformation
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
 
-        {/* Join the Crew (Social Proof) */}
-        <section className="mb-xl">
-          <h2 className="font-display text-h2 text-primary-black mb-lg text-center">
-            Join the Crew
-          </h2>
-          
-          <div className="grid grid-cols-2 gap-md mb-lg">
-            {/* Placeholder for before/after images */}
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="space-y-xs">
-                <Card className="aspect-square bg-gray-100 flex items-center justify-center">
-                  <span className="font-body text-body-sm text-gray-300">Before</span>
-                </Card>
-                <Card className="aspect-square bg-gray-100 flex items-center justify-center">
-                  <span className="font-body text-body-sm text-gray-300">After</span>
-                </Card>
-              </div>
-            ))}
-          </div>
-        </section>
+          {/* CTA */}
+          <section className="mb-8">
+            <button
+              onClick={handleStartNow}
+              className="w-full bg-primary-yellow font-display text-[20px] text-primary-black py-3 px-6 rounded-lg hover:bg-yellow-400 transition"
+            >
+              Start Now
+            </button>
+          </section>
 
-        {/* CTA */}
-        <section className="text-center">
-          <Button variant="primary" fullWidth onClick={handleStartNow}>
-            Start Now
-          </Button>
-        </section>
-
-        {/* Footer */}
-        <footer className="mt-xl text-center">
-          <p className="font-body text-body-sm text-gray-700">
-            © 2026 7.32 Coach • Privacy • Terms
-          </p>
-        </footer>
+          {/* Footer */}
+          <footer className="text-center">
+            <p className="font-body text-[20px] text-gray-700 leading-relaxed">
+              © 2026 7.32 Body LLC<br />
+              All Rights Reserved
+            </p>
+          </footer>
         </div>
       </main>
     </div>
