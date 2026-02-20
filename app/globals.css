@@ -29,11 +29,11 @@
   --gradient-card: linear-gradient(135deg, rgba(255, 227, 88, 0.1) 0%, rgba(255, 200, 55, 0.05) 100%);
   --gradient-overlay: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
   
-  /* Shadow system - multi-layered for depth */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 8px 16px rgba(0, 0, 0, 0.15), 0 16px 32px rgba(0, 0, 0, 0.15), 0 32px 64px rgba(0, 0, 0, 0.15);
+  /* Shadow system - multi-layered for depth (premium fitness app style) */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2), 0 16px 32px rgba(0, 0, 0, 0.15), 0 24px 48px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.25), 0 24px 48px rgba(0, 0, 0, 0.2), 0 36px 72px rgba(0, 0, 0, 0.15);
   
   /* Glassmorphism effects */
   --glass-bg: rgba(255, 255, 255, 0.05);
@@ -169,19 +169,19 @@ body {
   transform: translateY(-2px);
 }
 
-/* Elevated card with solid background */
+/* Elevated card with solid background - premium depth */
 .elevated-card {
-  background: var(--color-gray-900);
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .elevated-card:hover {
-  border-color: var(--color-primary-yellow);
-  box-shadow: var(--shadow-xl), 0 0 24px rgba(255, 227, 88, 0.15);
-  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(255, 227, 88, 0.5);
+  box-shadow: var(--shadow-xl), 0 0 32px rgba(255, 227, 88, 0.2);
+  transform: translateY(-2px);
 }
 
 /* Button transitions with spring effect */

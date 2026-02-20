@@ -13,135 +13,185 @@ export default function OnboardingFirstScreen() {
     router.push('/onboarding/goal');
   };
 
-  const steps = [
-    {
-      number: '01',
-      title: 'Upload your ideal physique',
-      description: 'Show us what you want to achieve',
-    },
-    {
-      number: '02',
-      title: 'Set your starting point',
-      description: 'Let AI analyze your current state',
-    },
-    {
-      number: '03',
-      title: 'Follow the plan',
-      description: 'Track progress and monitor daily',
-    },
-  ];
-
-  const transformations = [
-    { id: 1, label: 'Before', image: null },
-    { id: 2, label: 'After', image: null },
-    { id: 3, label: 'Before', image: null },
-    { id: 4, label: 'After', image: null },
-  ];
-
   return (
     <div className="min-h-screen bg-primary-black">
       <TopNav showAuth={true} />
 
-      <main className="main-content">
+      <main className="pt-24 md:pt-32 pb-24">
         <div className="container-responsive">
           
-          {/* Hero Section with Gradient */}
-          <section className="section-spacing">
-            <div className="text-center space-y-8 fade-in">
-              {/* Hero Badge */}
-              <div className="inline-block">
-                <div className="glass-card px-6 py-2">
-                  <span className="body-sm font-semibold text-primary-yellow">
-                    AI-Powered Transformation
-                  </span>
-                </div>
-              </div>
+          {/* Hero Section - Simplified, Bold, Clean */}
+          <section className="text-center mb-32 md:mb-40">
+            {/* Single powerful headline */}
+            <div className="space-y-10 max-w-4xl mx-auto">
+              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight">
+                <span className="text-white">Enough guessing.</span>
+                <br />
+                <span className="text-primary-yellow">Time for results.</span>
+              </h1>
+              
+              {/* Single line value prop */}
+              <p className="text-xl sm:text-2xl text-white/70 font-light max-w-2xl mx-auto">
+                AI-powered training that actually works
+              </p>
 
-              {/* Hero Headline */}
-              <div className="space-y-4 px-4">
-                <h1 className="heading-hero text-white mx-auto" style={{ maxWidth: '900px' }}>
-                  Enough guessing,{' '}
-                  <span className="text-primary-yellow">time for results</span>
-                </h1>
-                <p className="body-lg text-white/70 mx-auto" style={{ maxWidth: '700px' }}>
-                  AI-backed physique improvements. No more trial and error.
-                </p>
-              </div>
-
-              {/* Primary CTA */}
-              <div className="flex justify-center px-4">
+              {/* Single prominent CTA */}
+              <div className="pt-6">
                 <Button
                   onClick={handleStartNow}
                   size="large"
-                  className="w-full sm:w-auto sm:min-w-[280px]"
+                  className="text-xl px-16 h-20 shadow-2xl hover:shadow-primary-yellow/30"
                   glow
                 >
-                  Start Your Journey
+                  Start Free Trial
                 </Button>
               </div>
             </div>
           </section>
 
-          {/* How It Works */}
-          <section className="section-spacing">
-            <h2 className="heading-2 text-white text-center content-spacing">
-              How It Works
+          {/* How It Works - Visual, Not Text-Heavy */}
+          <section className="mb-32 md:mb-40">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-white text-center mb-16">
+              Three Simple Steps
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 stagger-children">
-              {steps.map((step) => (
-                <Card key={step.number} variant="glass" hover className="min-w-0">
-                  <div className="space-y-5">
-                    {/* Step Number */}
-                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary-yellow/20 border border-primary-yellow/30">
-                      <span className="heading-3 text-primary-yellow font-bold">{step.number}</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {/* Step 1 */}
+              <div className="relative">
+                <Card variant="elevated" className="h-full hover:scale-105 transition-transform duration-300">
+                  <div className="text-center space-y-6 p-4">
+                    {/* Big number */}
+                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-primary-yellow to-yellow-600 shadow-lg">
+                      <span className="text-4xl font-display font-black text-primary-black">1</span>
                     </div>
                     
-                    {/* Step Content */}
-                    <div className="space-y-3">
-                      <h3 className="heading-3 text-white font-semibold leading-tight">
-                        {step.title}
-                      </h3>
-                      <p className="body text-white/60 leading-relaxed">
-                        {step.description}
-                      </p>
+                    {/* Icon/Visual */}
+                    <div className="w-24 h-24 mx-auto bg-primary-yellow/10 rounded-2xl flex items-center justify-center">
+                      <svg className="w-16 h-16 text-primary-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
                     </div>
-
-                    {/* Visual Arrow */}
-                    {step.number !== '03' && (
-                      <div className="hidden md:block absolute -right-8 top-1/2 -translate-y-1/2 text-white/20">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </div>
-                    )}
+                    
+                    {/* Short title */}
+                    <h3 className="font-display text-2xl font-bold text-white">
+                      Upload Goal
+                    </h3>
+                    
+                    {/* Minimal description */}
+                    <p className="text-base text-white/60 leading-relaxed">
+                      Show us your target physique
+                    </p>
                   </div>
                 </Card>
-              ))}
+              </div>
+
+              {/* Step 2 */}
+              <div className="relative">
+                <Card variant="elevated" className="h-full hover:scale-105 transition-transform duration-300">
+                  <div className="text-center space-y-6 p-4">
+                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-primary-yellow to-yellow-600 shadow-lg">
+                      <span className="text-4xl font-display font-black text-primary-black">2</span>
+                    </div>
+                    
+                    <div className="w-24 h-24 mx-auto bg-primary-yellow/10 rounded-2xl flex items-center justify-center">
+                      <svg className="w-16 h-16 text-primary-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                      </svg>
+                    </div>
+                    
+                    <h3 className="font-display text-2xl font-bold text-white">
+                      AI Analyzes
+                    </h3>
+                    
+                    <p className="text-base text-white/60 leading-relaxed">
+                      Get your custom workout plan
+                    </p>
+                  </div>
+                </Card>
+              </div>
+
+              {/* Step 3 */}
+              <div className="relative">
+                <Card variant="elevated" className="h-full hover:scale-105 transition-transform duration-300">
+                  <div className="text-center space-y-6 p-4">
+                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-primary-yellow to-yellow-600 shadow-lg">
+                      <span className="text-4xl font-display font-black text-primary-black">3</span>
+                    </div>
+                    
+                    <div className="w-24 h-24 mx-auto bg-primary-yellow/10 rounded-2xl flex items-center justify-center">
+                      <svg className="w-16 h-16 text-primary-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                      </svg>
+                    </div>
+                    
+                    <h3 className="font-display text-2xl font-bold text-white">
+                      Track Progress
+                    </h3>
+                    
+                    <p className="text-base text-white/60 leading-relaxed">
+                      Watch your transformation happen
+                    </p>
+                  </div>
+                </Card>
+              </div>
             </div>
           </section>
 
-          {/* Social Proof - Transformations */}
-          <section className="section-spacing">
-            <div className="text-center mb-12 px-4">
-              <h2 className="heading-2 text-white mb-5">
-                Join the crew
-              </h2>
-              <p className="body text-white/60 mx-auto leading-relaxed" style={{ maxWidth: '600px' }}>
-                Real people, real results. See what's possible when AI meets dedication.
-              </p>
+          {/* Stats - Big, Bold, Visual */}
+          <section className="mb-32 md:mb-40">
+            <div className="max-w-5xl mx-auto">
+              <Card variant="elevated" className="bg-gradient-to-br from-gray-900 to-gray-800 border-primary-yellow/20">
+                <div className="grid grid-cols-3 divide-x divide-white/10">
+                  <div className="text-center py-12 px-4">
+                    <div className="text-5xl md:text-6xl font-display font-black text-primary-yellow mb-4">
+                      10K+
+                    </div>
+                    <div className="text-sm md:text-base font-medium text-white/70 uppercase tracking-wider">
+                      Active Users
+                    </div>
+                  </div>
+                  
+                  <div className="text-center py-12 px-4">
+                    <div className="text-5xl md:text-6xl font-display font-black text-primary-yellow mb-4">
+                      4.9★
+                    </div>
+                    <div className="text-sm md:text-base font-medium text-white/70 uppercase tracking-wider">
+                      App Rating
+                    </div>
+                  </div>
+                  
+                  <div className="text-center py-12 px-4">
+                    <div className="text-5xl md:text-6xl font-display font-black text-primary-yellow mb-4">
+                      95%
+                    </div>
+                    <div className="text-sm md:text-base font-medium text-white/70 uppercase tracking-wider">
+                      Success Rate
+                    </div>
+                  </div>
+                </div>
+              </Card>
             </div>
+          </section>
+
+          {/* Social Proof - Visual Grid */}
+          <section className="mb-32 md:mb-40">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-white text-center mb-16">
+              Real Transformations
+            </h2>
             
-            {/* Transformation Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-              {transformations.map((item) => (
-                <div key={item.id}>
-                  <div className="aspect-square rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center group hover:border-primary-yellow/30 transition-all duration-300 p-8 md:p-10">
-                    <div className="text-center space-y-5">
-                      <svg className="w-14 h-14 md:w-20 md:h-20 mx-auto text-white/20 group-hover:text-white/30 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
-                      <span className="body-sm text-white/40 font-medium">{item.label}</span>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="group">
+                  <div className="aspect-square rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-white/10 hover:border-primary-yellow/50 transition-all duration-300 flex items-center justify-center p-8 group-hover:scale-105">
+                    <div className="text-center space-y-6">
+                      <div className="w-20 h-20 mx-auto bg-primary-yellow/10 rounded-full flex items-center justify-center group-hover:bg-primary-yellow/20 transition-colors">
+                        <svg className="w-12 h-12 text-primary-yellow/40 group-hover:text-primary-yellow/60 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                      </div>
+                      <div className="text-sm font-medium text-white/50">
+                        {i % 2 === 0 ? 'Before' : 'After'}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -149,51 +199,35 @@ export default function OnboardingFirstScreen() {
             </div>
           </section>
 
-          {/* Final CTA Section with Stats */}
-          <section className="section-spacing">
-            <Card variant="elevated" className="text-center">
-              {/* Header Section */}
-              <div className="space-y-6 mb-12 pt-4">
-                <h2 className="heading-2 text-white px-4">
-                  Ready to transform?
-                </h2>
-                <p className="body-lg text-white/70 mx-auto px-4 leading-relaxed" style={{ maxWidth: '650px' }}>
-                  Start your personalized fitness journey today. No credit card required.
-                </p>
-              </div>
-
-              {/* Quick Stats */}
-              <div className="grid grid-cols-3 gap-8 sm:gap-12 py-12 my-8 border-y border-white/10">
-                <div className="space-y-4">
-                  <div className="heading-2 text-primary-yellow font-bold">10K+</div>
-                  <div className="body-sm text-white/60 font-medium">Active Users</div>
-                </div>
-                <div className="space-y-4">
-                  <div className="heading-2 text-primary-yellow font-bold">4.9★</div>
-                  <div className="body-sm text-white/60 font-medium">App Rating</div>
-                </div>
-                <div className="space-y-4">
-                  <div className="heading-2 text-primary-yellow font-bold">95%</div>
-                  <div className="body-sm text-white/60 font-medium">Success Rate</div>
-                </div>
-              </div>
-
-              {/* CTA Button */}
-              <div className="pt-6 pb-4">
-                <Button
-                  onClick={handleStartNow}
-                  size="large"
-                  className="w-full sm:w-auto sm:min-w-[320px]"
-                >
-                  Get Started Now
-                </Button>
-              </div>
-            </Card>
+          {/* Final CTA - Clean, Focused */}
+          <section className="max-w-4xl mx-auto text-center">
+            <div className="space-y-12">
+              <h2 className="font-display text-5xl md:text-6xl font-bold text-white leading-tight">
+                Ready to <span className="text-primary-yellow">transform?</span>
+              </h2>
+              
+              <p className="text-xl text-white/70 max-w-2xl mx-auto">
+                Join thousands who've already achieved their fitness goals
+              </p>
+              
+              <Button
+                onClick={handleStartNow}
+                size="large"
+                className="text-xl px-16 h-20 shadow-2xl hover:shadow-primary-yellow/30"
+                glow
+              >
+                Start Free Trial
+              </Button>
+              
+              <p className="text-sm text-white/50">
+                No credit card required
+              </p>
+            </div>
           </section>
 
           {/* Footer */}
-          <footer className="text-center pt-12 border-t border-white/10">
-            <p className="body text-white/40">
+          <footer className="text-center pt-32 pb-12">
+            <p className="text-sm text-white/40">
               © 2026 7.32 Body LLC. All Rights Reserved.
             </p>
           </footer>
