@@ -123,8 +123,8 @@ export default function OnboardingFirstScreen() {
 
           {/* Social Proof - Transformations */}
           <section className="section-spacing">
-            <div className="text-center content-spacing px-4">
-              <h2 className="heading-2 text-white mb-4">
+            <div className="text-center mb-12 px-4">
+              <h2 className="heading-2 text-white mb-5">
                 Join the crew
               </h2>
               <p className="body text-white/60 mx-auto leading-relaxed" style={{ maxWidth: '600px' }}>
@@ -133,12 +133,12 @@ export default function OnboardingFirstScreen() {
             </div>
             
             {/* Transformation Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               {transformations.map((item) => (
                 <div key={item.id}>
-                  <div className="aspect-square rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center group hover:border-primary-yellow/30 transition-all duration-300 p-8">
-                    <div className="text-center space-y-4">
-                      <svg className="w-12 h-12 md:w-16 md:h-16 mx-auto text-white/20 group-hover:text-white/30 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="aspect-square rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center group hover:border-primary-yellow/30 transition-all duration-300 p-8 md:p-10">
+                    <div className="text-center space-y-5">
+                      <svg className="w-14 h-14 md:w-20 md:h-20 mx-auto text-white/20 group-hover:text-white/30 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                       </svg>
                       <span className="body-sm text-white/40 font-medium">{item.label}</span>
@@ -153,7 +153,7 @@ export default function OnboardingFirstScreen() {
           <section className="section-spacing">
             <Card variant="elevated" className="text-center">
               {/* Header Section */}
-              <div className="space-y-5 mb-10 pt-2">
+              <div className="space-y-6 mb-12 pt-4">
                 <h2 className="heading-2 text-white px-4">
                   Ready to transform?
                 </h2>
@@ -163,23 +163,23 @@ export default function OnboardingFirstScreen() {
               </div>
 
               {/* Quick Stats */}
-              <div className="grid grid-cols-3 gap-6 sm:gap-10 py-10 my-6 border-y border-white/10">
-                <div className="space-y-3">
+              <div className="grid grid-cols-3 gap-8 sm:gap-12 py-12 my-8 border-y border-white/10">
+                <div className="space-y-4">
                   <div className="heading-2 text-primary-yellow font-bold">10K+</div>
                   <div className="body-sm text-white/60 font-medium">Active Users</div>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   <div className="heading-2 text-primary-yellow font-bold">4.9★</div>
                   <div className="body-sm text-white/60 font-medium">App Rating</div>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   <div className="heading-2 text-primary-yellow font-bold">95%</div>
                   <div className="body-sm text-white/60 font-medium">Success Rate</div>
                 </div>
               </div>
 
               {/* CTA Button */}
-              <div className="pt-4 pb-2">
+              <div className="pt-6 pb-4">
                 <Button
                   onClick={handleStartNow}
                   size="large"
